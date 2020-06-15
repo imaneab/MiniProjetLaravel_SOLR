@@ -7,6 +7,7 @@
 <meta name="description" content="Course Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link rel="icon" type="image/jpg" href="images/logoEnsa.jpg" style="width: 100px;height: 100px;" />
 <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="styles/teachers_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/teachers_responsive.css">
@@ -21,9 +22,9 @@
 		<div class="header_content d-flex flex-row align-items-center">
 			<!-- Logo -->
 			<div class="logo_container">
-				<div class="logo">
-					<img src="images/logo.png" alt="">
-					<span>course</span>
+			<div class="logo">
+					<img src="<?php echo url('/'); ?>/images/ensa.png" style="width:250px;height:80px;margin-left: -50px;" alt="">
+					<span></span>
 				</div>
 			</div>
 
