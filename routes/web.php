@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+
 Route::get('/courses', function () {
     return view('courses');
 });
@@ -32,3 +33,7 @@ Route::get('/news', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/main','MainController@indexAdmin');
+Route::post('/main/checklogin', 'MainController@checklogin');
+Route::get('main/successlogin', 'MainController@successlogin');
+Route::get('main/logout', 'MainController@logout');
