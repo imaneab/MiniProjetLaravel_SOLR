@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::resource('/', 'ActualiteController');
 
+
+Route::get('main/index', 'ActualiteController@indexActualite');
 
 Route::get('/courses', function () {
     return view('courses');
@@ -36,4 +39,6 @@ Route::get('/contact', function () {
 Route::get('/main','MainController@indexAdmin');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
+Route::get('main/create', 'MainController@create');
+//Route::get('/edit', 'MainController@edit');
 Route::get('main/logout', 'MainController@logout');

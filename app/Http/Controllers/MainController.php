@@ -43,6 +43,11 @@ class MainController extends Controller
      return view('Admin.successlogin');
     }
 
+    function create()
+    {
+     return view('Admin.create');
+    }
+
     function logout()
     {
      Auth::logout();
