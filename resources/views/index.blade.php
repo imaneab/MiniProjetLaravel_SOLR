@@ -40,7 +40,7 @@
 						<li class="main_nav_item"><a href="courses">courses</a></li>
 						<li class="main_nav_item"><a href="elements">elements</a></li>
 						<li class="main_nav_item"><a href="news">news</a></li>
-						<li class="main_nav_item"><a href="contact">contact</a></li>
+						<li class="main_nav_item"><a href="connexion">Connexion</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -56,7 +56,7 @@
 		</div>
 
 	</header>
-	
+
 	<!-- Menu -->
 	<div class="menu_container menu_mm">
 
@@ -78,7 +78,7 @@
 				</ul>
 
 				<!-- Menu Social -->
-				
+
 				<div class="menu_social_container menu_mm">
 					<ul class="menu_social menu_mm">
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
@@ -95,7 +95,7 @@
 		</div>
 
 	</div>
-	
+
 	<!-- Home -->
 
 	<div class="home">
@@ -103,7 +103,7 @@
 		<!-- Hero Slider -->
 		<div class="hero_slider_container">
 			<div class="hero_slider owl-carousel">
-				
+
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background" style="background-image:url(<?php echo url('/'); ?>/images/slider_background.jpg)"></div>
@@ -113,7 +113,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background" style="background-image:url(<?php echo url('/'); ?>/images/slider_background.jpg)"></div>
@@ -123,7 +123,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Hero Slide -->
 				<div class="hero_slide">
 					<div class="hero_slide_background" style="background-image:url(<?php echo url('/'); ?>/images/slider_background.jpg)"></div>
@@ -195,7 +195,7 @@
 			</div>
 
 			<div class="row course_boxes">
-				
+
 				<!-- Popular Course Item -->
 				<div class="col-lg-4 course_box">
 					<div class="card">
@@ -250,7 +250,7 @@
 					</div>
 				</div>
 			</div>
-		</div>		
+		</div>
 	</div>
 
 	<!-- Register -->
@@ -258,10 +258,10 @@
 	<div class="register">
 
 		<div class="container-fluid">
-			
+
 			<div class="row row-eq-height">
 				<div class="col-lg-6 nopadding">
-					
+
 					<!-- Register -->
 
 					<div class="register_section d-flex flex-column align-items-center justify-content-center">
@@ -275,7 +275,7 @@
 				</div>
 
 				<div class="col-lg-6 nopadding">
-					
+
 					<!-- Search -->
 
 					<div class="search_section d-flex flex-column align-items-center justify-content-center">
@@ -288,7 +288,7 @@
 								<input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Degree">
 								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">search course</button>
 							</form>
-						</div> 
+						</div>
 					</div>
 
 				</div>
@@ -299,7 +299,7 @@
 	<!-- Services -->
 
 	<div class="services page_section">
-		
+
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -382,12 +382,12 @@
 
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
-					
+
 					<div class="testimonials_slider_container">
 
 						<!-- Testimonials Slider -->
 						<div class="owl-carousel owl-theme testimonials_slider">
-							
+
 							<!-- Testimonials Item -->
 							<div class="owl-item">
 								<div class="testimonials_item text-center">
@@ -446,7 +446,7 @@
 
 	<div class="events page_section">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
@@ -454,7 +454,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="event_items">
 
 				<!-- Event Item -->
@@ -483,7 +483,7 @@
 								</div>
 							</div>
 
-						</div>	
+						</div>
 					</div>
 				</div>
 
@@ -513,7 +513,7 @@
 								</div>
 							</div>
 
-						</div>	
+						</div>
 					</div>
 				</div>
 
@@ -543,12 +543,12 @@
 								</div>
 							</div>
 
-						</div>	
+						</div>
 					</div>
 				</div>
 
 			</div>
-				
+
 		</div>
 	</div>
 
@@ -556,7 +556,7 @@
 
 	<footer class="footer">
 		<div class="container">
-			
+
 			<!-- Newsletter -->
 
 			<div class="newsletter">
