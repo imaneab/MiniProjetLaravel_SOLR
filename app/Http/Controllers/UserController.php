@@ -6,16 +6,15 @@ use Illuminate\Http\Request;
 use Validator;
 use Auth;
 
-class MainController extends Controller
+class UserController extends Controller
 {
-    //
     function indexAdmin()
     {
-        return view('Admin.login');
+        return view('User.login');
 
     }
 
-    function checklogin(Request $request)   //only for admin
+    function checklogin(Request $request)   //only for user
     {
         $this->validate($request, [    //validation rules
             'email'   => 'required|email',
@@ -28,11 +27,11 @@ class MainController extends Controller
         );
 
         if(Auth::attempt($user_data)){  //enters block if user exists in db
-            if(Auth::user()->is_admin){     //if admin
-                return redirect('main/successlogin');
+            if(!Auth::user()->is_admin){     //if not admin
+                return redirect('user/successlogin');
             }
             else{
-                return back()->with('error', 'You are not an admin');
+                return back()->with('error', 'You are an admin, not a normal user');
             }
         }
         else{
@@ -40,15 +39,14 @@ class MainController extends Controller
         }
 
     }
-
     function successlogin()
     {
-     return view('Admin.successlogin');
+        return view('Admin.successlogin');
     }
 
     function logout()
     {
-     Auth::logout();
-     return redirect('main');
+        Auth::logout();
+        return redirect('main');
     }
 }
