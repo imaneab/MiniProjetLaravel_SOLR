@@ -63,7 +63,7 @@ class ActualiteController extends Controller
 
         Actualite::create($form_data);
 
-        return redirect('indexActualite')->with('success', 'Data Added successfully.');
+        return redirect('/main/index')->with('success', 'Data Added successfully.');
     }
 
     /**
@@ -109,30 +109,33 @@ class ActualiteController extends Controller
             $request->validate([
                 'description'    =>  'required',
                 'image_path'     =>  'required'
+                
             ]);
-
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('image_path'), $image_name);
         }
         else
         {
             $request->validate([
-                'description'    =>  'required',
-                'image_path'     =>  'required'
+                //'description'    =>  'required',
+                //'image_path'     =>  'required'
             ]);
         }
 
         $form_data = array(
-            'description'       =>   $request->description,
-            'image_path'        =>   $request->image_path
+            'description'    =>  $request->description,
+            'image_path'         =>  $image_name
         );
-  
+
         Actualite::whereId($id)->update($form_data);
 
-        return redirect('indexActualite')->with('success', 'Data is successfully updated');
+        return redirect('/main/index')->with('success', 'Contact updated!');
+
+
+
     }
 
-    /**
+       /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -144,6 +147,6 @@ class ActualiteController extends Controller
         $actualites = Actualite::findOrFail($id);
         $actualites->delete();
 
-        return redirect('indexActualite')->with('success', 'Data is successfully deleted');
+        return redirect('/main/index')->with('success', 'Data is successfully deleted');
     }
 }

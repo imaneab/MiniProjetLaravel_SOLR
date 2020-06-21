@@ -78,9 +78,17 @@
 											<td>{{ $row->description }}</td>
                                             <td>{{ $row->created_at }}</td>
                                            
-                                            <td><a href="{{ route('edit', $row->id) }}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                            <td>
                                             
-                                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                            <form action="{{ route('actualites.destroy',$row->id) }}" method="POST">
+   
+                                            <a style="border:0px;background-color: Transparent"><a href="{{ route('actualites.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+
+                                          @csrf
+                                          @method('DELETE')
+
+                                          <button style="border:0px;background-color: Transparent;margin-top:-14px"><a class="delete" type="submit" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button>
+                                          </form>
                                             </td>
                                            
 									
