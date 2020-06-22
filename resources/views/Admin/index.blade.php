@@ -33,7 +33,14 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Gestion des actualités</h3>
+                                <h3>Gestion des actualités</h3>
+                                
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                                
 							</div>
 							<div class="module-body">
 

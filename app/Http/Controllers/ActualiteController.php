@@ -12,11 +12,11 @@ class ActualiteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function home_index()
+    /*public function home_index()
     {        
         $actualites = Actualite::all();
         return view('index', compact('actualites'));
-    }
+    }*/
 
     public function index()
     {

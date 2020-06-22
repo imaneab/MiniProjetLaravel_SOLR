@@ -9,7 +9,12 @@ use Auth;
 
 class MainController extends Controller
 {
-    //
+    public function index()
+    {        
+        $actualites = Actualite::all();
+        return view('index', compact('actualites'));
+    }
+
     function indexAdmin()
     {
         return view('Admin.login');
@@ -55,6 +60,6 @@ class MainController extends Controller
     function logout()
     {
      Auth::logout();
-     return redirect()->route('main');
+     return redirect()->route('home');
     }
 }

@@ -17,9 +17,11 @@ Route::resource('/actualites','ActualiteController');
 Route::resource('/documents', "DocumentController");
 
 //Route::get('/', 'ActualiteController@home_index');
-Route::get('/', 'ActualiteController@home_index');
+Route::get('/', 'MainController@index')->name('home');
 
 Route::get('/main/logout', 'MainController@logout')->name('logout');
+
+Route::view('/connexion', 'User.login')->name('connexion');
 
 
 //Route::resource('/', 'ActualiteController');
@@ -43,9 +45,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/connexion', function () {
-    return view('User.login');
-});
+// Route::get('/connexion', function () {
+//     return view('User.login');
+// });
 
 //admin
 Route::get('/main','MainController@indexAdmin')->name('main');
@@ -54,10 +56,8 @@ Route::get('/main/successlogin', 'MainController@successlogin')->name('successlo
 Route::get('/main/create', 'MainController@create');
 //Route::get('/edit', 'MainController@edit');
 
-
-
 //user
-Route::post('/user/checklogin', 'UserController@checklogin');
-Route::get('user/successlogin', 'UserController@successlogin');
+Route::post('/user/checklogin', 'UserController@checklogin')->name('user_checklogin');
+Route::get('/user/successlogin', 'UserController@successlogin');
 
 

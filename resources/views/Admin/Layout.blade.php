@@ -44,7 +44,7 @@
                                     <li><a href="#">Modifier Profile</a></li>
                                     <li><a href="#">Parametres du compte</a></li>
                                     <li class="divider"></li>
-                                <li><a href="{{ route('logout') }}"> Log Out</a></li>
+                                <li><a href="{{ route('logout') }}"> Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -74,7 +74,7 @@
                          
                             <ul class="widget widget-menu unstyled">
                                 
-                                {{-- <li><a href="{{ route('logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> --}}
+                                <li><a href="{{ route('logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> 
                             </ul>
                         </div>
                         <!--/.sidebar-->
