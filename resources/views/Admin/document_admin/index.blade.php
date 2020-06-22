@@ -8,7 +8,7 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Ajouter une actualité</h3>
+								<h3>Ajouter un document</h3>
 							</div>
 							<div class="module-body">
 
@@ -22,7 +22,7 @@
                              </div>
                              @endif
                              <div align="right">
-                             <a href="{{ route('actualites.index') }}">Retour</a>
+                             <a href="index">Retour</a>
                              </div>
 
 									<form method="post" action="{{ route('actualites.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >

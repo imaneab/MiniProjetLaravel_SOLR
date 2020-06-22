@@ -11,15 +11,14 @@ class ActualiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+
+    public function home_index()
+    {        
         $actualites = Actualite::all();
         return view('index', compact('actualites'));
-
     }
 
-    public function indexActualite()
+    public function index()
     {
         //
         $actualites = Actualite::all();
@@ -63,7 +62,7 @@ class ActualiteController extends Controller
 
         Actualite::create($form_data);
 
-        return redirect('/main/index')->with('success', 'Data Added successfully.');
+        return redirect()->route('actualites.index')->with('success', 'Data Added successfully.');
     }
 
     /**
@@ -129,7 +128,7 @@ class ActualiteController extends Controller
 
         Actualite::whereId($id)->update($form_data);
 
-        return redirect('/main/index')->with('success', 'Contact updated!');
+        return redirect()->route('actualites.index')->with('success', 'Contact updated!');
 
 
 
@@ -147,6 +146,6 @@ class ActualiteController extends Controller
         $actualites = Actualite::findOrFail($id);
         $actualites->delete();
 
-        return redirect('/main/index')->with('success', 'Data is successfully deleted');
+        return redirect()->route('actualites.index')->with('success', 'Data is successfully deleted');
     }
 }

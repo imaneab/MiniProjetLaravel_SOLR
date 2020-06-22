@@ -12,14 +12,20 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('actualites','ActualiteController');
-Route::get('/', function () {
-    return view('index');
-});
-Route::resource('/', 'ActualiteController');
+Route::resource('/actualites','ActualiteController');
+
+Route::resource('/documents', "DocumentController");
+
+//Route::get('/', 'ActualiteController@home_index');
+Route::get('/', 'ActualiteController@home_index');
+
+Route::get('/main/logout', 'MainController@logout')->name('logout');
 
 
-Route::get('main/index', 'ActualiteController@indexActualite');
+//Route::resource('/', 'ActualiteController');
+
+
+//Route::get('main/index_actualites', 'ActualiteController@indexActualite');
 
 Route::get('/courses', function () {
     return view('courses');
@@ -42,13 +48,16 @@ Route::get('/connexion', function () {
 });
 
 //admin
-Route::get('/main','MainController@indexAdmin');
+Route::get('/main','MainController@indexAdmin')->name('main');
 Route::post('/main/checklogin', 'MainController@checklogin');
-Route::get('main/successlogin', 'MainController@successlogin');
-Route::get('main/create', 'MainController@create');
+Route::get('/main/successlogin', 'MainController@successlogin')->name('successlogin');
+Route::get('/main/create', 'MainController@create');
 //Route::get('/edit', 'MainController@edit');
-Route::get('main/logout', 'MainController@logout');
+
+
 
 //user
 Route::post('/user/checklogin', 'UserController@checklogin');
 Route::get('user/successlogin', 'UserController@successlogin');
+
+

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilesTable extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('files', function (Blueprint $table) {
-            
-            $table->increments('id');
-            $table->foreignId('user_id')->constrained();
-            $table->string('title', 150);   //150 carac, titre du fichier
-            //ici, je dois ajouter une colonne pour le contenu pdf (pas encore fait)
-            $table->timestamps();
+        Schema::create('documents', function (Blueprint $table) {
 
+            $table->id();
+            $table->string('path');
+            $table->string('sujet');
+            $table->foreignId('user_id')->constrained();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ class CreateFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('documents');
     }
 }

@@ -54,7 +54,7 @@
                             
 							<div class="module-body table">
                             <div class="col-sm-4">
-                            <a href="create">
+                            <a href="{{ route('actualites.create') }}">
                               <button type="button" class="btn btn-info add-new" style="margin-left: 620px;"><i class="fa fa-plus"></i>Ajouter une nouvelle actualité</button>
                             </a>
                             </div>

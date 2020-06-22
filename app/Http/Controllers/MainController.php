@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actualite;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -29,7 +30,7 @@ class MainController extends Controller
 
         if(Auth::attempt($user_data)){  //enters block if user exists in db
             if(Auth::user()->is_admin){     //if admin
-                return redirect('main/successlogin');
+                return redirect()->route('successlogin');
             }
             else{
                 return back()->with('error', 'You are not an admin');
@@ -54,6 +55,6 @@ class MainController extends Controller
     function logout()
     {
      Auth::logout();
-     return redirect('main');
+     return redirect()->route('main');
     }
 }
