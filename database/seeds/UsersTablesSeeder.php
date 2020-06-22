@@ -11,13 +11,25 @@ class UsersTablesSeeder extends Seeder
      */
     public function run()
     {
-        //
-        User::create([
-            'name'    => 'Abouakil Imane',
-            'email'    => 'admin@gmail.com',
-            'password'   =>  Hash::make('password'),
-            'remember_token' =>  str_random(10),
+        $users = [
+            [
+                'name'    => 'Abouakil Imane',
+                'email'    => 'admin@gmail.com',
+                'password'   =>  Hash::make('password'),
+                'remember_token' =>  str_random(10),
+                'is_admin' => 1,
+            ],
+            [
+                'name'    => 'Abdennour Imane',
+                'email'    => 'imane.abdennour0@gmail.com',
+                'password'   =>  Hash::make('password'),
+                'remember_token' =>  str_random(10),
+            ],
+        ];
 
-        ]);
+        foreach($users as $user){
+            User::create($user);
+        }
+
     }
 }

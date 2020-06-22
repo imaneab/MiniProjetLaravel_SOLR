@@ -23,9 +23,9 @@
 				<h3>Connectez-vous</h3>
 
 			</div>
-   <!--if user is admin and deja authentifé => directement dirigé à successlogin-->
-   @if(isset(Auth::user()->email) && Auth::user()->is_admin)
-    <script>window.location="/main/successlogin";</script>
+   <!--if user n'est pas admin et deja authentifé => directement dirigé à successlogin-->
+   @if(isset(Auth::user()->email) && !Auth::user()->is_admin)
+    <script>window.location="/user/successlogin";</script>
    @endif
 
    @if ($message = Session::get('error'))
@@ -46,7 +46,7 @@
    @endif
 
    <div class="card-body">
-                <form method="post" action="{{ url('/main/checklogin') }}">
+                <form method="post" action="{{ url('/user/checklogin') }}">
                      {{ csrf_field() }}
 					<div class="input-group form-group">
 						<div class="input-group-prepend">

@@ -36,9 +36,19 @@ Route::get('/news', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/connexion', function () {
+    return view('User.login');
+});
+
+//admin
 Route::get('/main','MainController@indexAdmin');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/create', 'MainController@create');
 //Route::get('/edit', 'MainController@edit');
 Route::get('main/logout', 'MainController@logout');
+
+//user
+Route::post('/user/checklogin', 'UserController@checklogin');
+Route::get('user/successlogin', 'UserController@successlogin');
