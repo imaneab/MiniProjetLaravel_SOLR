@@ -12,11 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('actualites','ActualiteController');
 Route::get('/', function () {
     return view('index');
 });
+Route::resource('/', 'ActualiteController');
 
+
+Route::get('main/index', 'ActualiteController@indexActualite');
 
 Route::get('/courses', function () {
     return view('courses');
@@ -42,6 +45,8 @@ Route::get('/connexion', function () {
 Route::get('/main','MainController@indexAdmin');
 Route::post('/main/checklogin', 'MainController@checklogin');
 Route::get('main/successlogin', 'MainController@successlogin');
+Route::get('main/create', 'MainController@create');
+//Route::get('/edit', 'MainController@edit');
 Route::get('main/logout', 'MainController@logout');
 
 //user
