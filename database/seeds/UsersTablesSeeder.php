@@ -37,6 +37,12 @@ class UsersTablesSeeder extends Seeder
                 'password'   =>  Hash::make('password'),
                 'remember_token' =>  str_random(10),
             ],
+            [
+                'name'    => 'Zidani Mohamed',
+                'email'    => 'mohamed.zidani@gmail.com',
+                'password'   =>  Hash::make('password'),
+                'remember_token' =>  str_random(10),
+            ],
         ];
 
         foreach($users as $user){
