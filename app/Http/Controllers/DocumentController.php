@@ -11,7 +11,7 @@ class DocumentController extends Controller
 
     public function __construct()
     {
-        
+        $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -43,6 +43,7 @@ class DocumentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'title'  => 'required',
             'description'  => 'required',
             'path'         =>  'required|mimes:pdf,doc,docx,pptx|max:5000'
         ]);
@@ -52,6 +53,7 @@ class DocumentController extends Controller
         $path = Storage::putFileAs('admin_documents', $file, $filename);
 
         $form_data = [
+            'title' => $request->title,
             'description' => $request->description,
             'path' => $filename
         ];
@@ -84,11 +86,13 @@ class DocumentController extends Controller
     {
         
             $request->validate([
+                'title'  => 'required',
                 'description'    =>  'required'                              
             ]);
         
 
         $form_data = array(
+            'title'  => $request->title,
             'description'    =>  $request->description
         );
 

@@ -51,15 +51,15 @@
 
                 {{-- affichage des Messages --}}
                 @if (session('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success alert-block">
                         {{ session('success') }}
                     </div>
                 @elseif(session('warning'))
-                    <div class="alert alert-warning">
+                    <div class="alert alert-warning alert-block">
                         {{ session('warning') }}
                     </div>
                 @elseif(session('danger'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger alert-block">
                         {{ session('danger') }}
                     </div>
                 @endif
@@ -75,9 +75,9 @@
                         <thead>
                             <tr>
                                 <th>N°</th>
-                                <th>Download</th>
+                                <th>Titre</th>
                                 <th>Description</th>
-                                <th>Date de création</th>
+                                <th>Download</th>
                                 <th>Action</th>
                                 
                             </tr>
@@ -87,28 +87,29 @@
                             
                             <tr class="odd gradeX">
                                 <td>{{ ($loop->index + 1 )}}</td>
+                                <td> {{ $row->title}}</td>
+                                <td>{{ $row->description }}</td>
                                 <td>
-                                    
                                     <a href="{{ route('documents.download',$row->id) }}" class="download" title="Download" data-toggle="tooltip">
                                         <i class="icon-cloud-download p-5" style="color:#27C46B; "></i>
-                                    </a>
+                                    </a> 
                                 </td>
-                                <td>{{ $row->description }}</td>
-                                <td>{{ $row->created_at }}</td>
                             
-                                <td>
-                                
-                                <form action="{{ route('documents.destroy',$row->id) }}" method="POST">
+                                <td>   
+                                                                
+                                    <form action="{{ route('documents.destroy',$row->id) }}" method="POST">
+                                       
+                                        <a href="{{ route('documents.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip">
+                                            <i class="material-icons">&#xE254;</i>
+                                        </a>                                        
 
-                                <a href="{{ route('documents.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip">
-                                    <i class="material-icons">&#xE254;</i>
-                                </a>
+                                        @csrf
+                                        @method('DELETE')
 
-                            @csrf
-                            @method('DELETE')
+                                        <button style="border:0px;background-color: Transparent;margin-top:-14px"><a class="delete" type="submit" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button>
+                                        
 
-                            <button style="border:0px;background-color: Transparent;margin-top:-14px"><a class="delete" type="submit" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button>
-                            </form>
+                                    </form>
                                 </td>
                             
                         
@@ -116,16 +117,7 @@
                             @endforeach
                         
                         </tbody>
-                        <tfoot>
-                            <tr>
-                            <th>N°</th>
-                                <th>Download</th>
-                                <th>Description</th>
-                                <th>Date de création</th>
-                                <th>Action</th>
-                            
-                            </tr>
-                        </tfoot>
+                        
                     </table>
                 </div>
             </div><!--/.module-->
