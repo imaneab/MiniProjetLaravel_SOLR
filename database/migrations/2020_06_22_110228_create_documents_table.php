@@ -17,8 +17,7 @@ class CreateDocumentsTable extends Migration
 
             $table->id();
             $table->string('path');
-            $table->string('sujet');
-            $table->foreignId('user_id')->constrained();
+            $table->string('description');
             $table->timestamps();
         });
     }

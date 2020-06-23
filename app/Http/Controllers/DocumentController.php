@@ -2,18 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
+
+    public function __construct()
+    {
+        
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    function index()
     {
-        return view('Admin.document_admin.index');
+        $documents = Document::all();
+        return view('Admin.documents.index', compact('documents'));
     }
 
     /**
@@ -23,7 +31,7 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        return view('Admin.document_admin.create');
+        return view('Admin.documents.create');
     }
 
     /**
@@ -34,18 +42,23 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'description'  => 'required',
+            'path'         =>  'required|mimes:pdf,doc,docx,pptx|max:5000'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $file = $request->file('path');
+        $filename = rand() . '_' . $file->getClientOriginalName();
+        $path = Storage::putFileAs('admin_documents', $file, $filename);
+
+        $form_data = [
+            'description' => $request->description,
+            'path' => $filename
+        ];
+
+        Document::create($form_data);
+
+        return redirect()->route('documents.index')->with('success', 'le document a été bien ajouté !');
     }
 
     /**
@@ -56,7 +69,8 @@ class DocumentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $document = Document::findOrFail($id);
+        return view('Admin.documents.edit', compact('document'));
     }
 
     /**
@@ -68,7 +82,21 @@ class DocumentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+            $request->validate([
+                'description'    =>  'required'                              
+            ]);
+        
+
+        $form_data = array(
+            'description'    =>  $request->description
+        );
+
+        Document::whereId($id)->update($form_data);
+
+        return redirect()->route('documents.index')->with('warning', 'le document a été bien modifié !');
+
+
     }
 
     /**
@@ -79,6 +107,24 @@ class DocumentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $document = Document::findOrFail($id);
+        
+        //Storage::delete(public_path('admin_documents' ));
+        Storage::delete('admin_documents/' . $document->path);
+        $document->delete();
+        
+
+        return redirect()->route('documents.index')->with('danger', 'le document est supprimé !!');
+    }
+
+    public function download($id)
+    {
+        
+        $document = Document::findOrFail($id);
+        
+        //Storage::delete(public_path('admin_documents' ));
+        return Storage::download('admin_documents/'. $document->path);
+
     }
 }
