@@ -41,7 +41,7 @@ class UserController extends Controller
     }
     function successlogin()
     {
-        return view('Admin.successlogin');
+        return view('User.successlogin');
     }
 
     function logout()

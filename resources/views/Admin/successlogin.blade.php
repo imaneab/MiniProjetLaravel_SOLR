@@ -70,19 +70,5 @@
                                         <li>
                                             <p>
                                                 <strong>iPhone</strong> <span class="pull-right small muted">67%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-danger" style="width: 67%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                           
-                            
-                        </div>
-                        <!--/.content-->
-                    </div>
-                    <!--/.span9-->
-@endsection              
+
+@endsection

@@ -18,8 +18,12 @@ class CreateFilesTable extends Migration
             $table->increments('id');
             $table->foreignId('user_id')->constrained();
             $table->string('title', 150);   //150 carac, titre du fichier
-            //ici, je dois ajouter une colonne pour le contenu pdf (pas encore fait)
             $table->timestamps();
+
+
+            //Name description type path_file : colonnes f autre migration
+
+            //$table->foreign('user_id')->references('id')->on('users');
 
         });
     }
