@@ -69,14 +69,14 @@
                                 </li>
                                 <li><a href="{{ route('documents.index') }}"><i class="menu-icon icon-paste"></i>Gestion des fichiers </a></li>
                                 <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
-                                <li><a href="listAllFiles"><i class="menu-icon icon-tasks"></i>Liste des fichiers étudiants</a></li>
+                                <li><a href="{{ route('listAllFiles') }}""><i class="menu-icon icon-tasks"></i>Liste des fichiers étudiants</a></li>
                             </ul>
 
                             <ul class="widget widget-menu unstyled">
                                 
                                 <li><a href="{{ route('logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> 
 
-                                <!-- <li><a href="{{ url('/main/logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> -->
+                                {{-- <!-- <li><a href="{{ url('/main/logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> --> --}}
 
                             </ul>
                         </div>

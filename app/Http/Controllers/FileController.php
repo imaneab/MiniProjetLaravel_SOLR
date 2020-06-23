@@ -29,7 +29,7 @@ class FileController extends Controller
                 $fileName =  $request->file->getClientOriginalName();
 
                 //stored in storage/app/public/upload :
-                $path_file = $request->file->storeAs('public/upload', $fileName);
+                $path_file = $request->file->storeAs('upload', $fileName);
                 //returns path => f db soit kanqyd lfile diali b lpath ou bien b name
 
                 //$request->file->getClientOriginalName() => name d lfile b smia li f pc d lclient

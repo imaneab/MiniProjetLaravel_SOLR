@@ -63,13 +63,14 @@ Route::get('/main/create', 'MainController@create');
 Route::post('/user/checklogin', 'UserController@checklogin')->name('user_checklogin');
 Route::get('/user/successlogin', 'UserController@successlogin');
 
+
 /*Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/create', 'MainController@create');
 Route::get('/edit', 'MainController@edit');
 Route::get('main/logout', 'MainController@logout');
 Route::get('/main/listAllFiles', 'FileController@listAllFiles');
 */
-
+Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
 //user
 /*
 Route::post('/user/checklogin', 'UserController@checklogin');
@@ -79,5 +80,6 @@ Route::get('/ajouterFichier', 'FileController@ajouterFichierPage');
 Route::post('/ajouterFichier', 'FileController@saveFile')->name('saveFile');
 Route::get('/listFichier/{id}', 'FileController@listFichier');
 Route::get('/rechercher', 'FileController@rechercher');
+
 
 
