@@ -14,53 +14,46 @@
                 <div class="module-head">
                     <h3>Ajouter un document</h3>
                 </div>
+
                 <div class="module-body">
-
-                @if($errors->any())
-                <div class="alert alert-danger">
-                <ul>
-                @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-                </div>
-                @endif
-                <div align="right">
-                <a href="{{ route('documents.index') }}">Retour</a>
-                </div>
-
-                        <form method="post" action="{{ route('documents.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
+                    <form method="post" action="{{ route('documents.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
                         @csrf
-                            <br/>
-                            <br/>
+                    <input type="hidden" name="id" value="{{Auth::user()->id}}">
 
-                            <div class="control-group">
-                                <label class="control-label" for="basicinput">Description</label>
-                                <div class="controls">
-                                    <input type="text" name="description" placeholder="Ajouter une description au document..." data-original-title="" class="span8 tip">
-                                </div>
+                    <div class="control-group">
+                            <label class="control-label" for="basicinput">Titre </label>
+                            <div class="controls">
+                                <input type="text" name="title" id="basicinput" placeholder="Type the title here..." class="span8">
                             </div>
-                            
-                            <div class="control-group">
-                                <label class="control-label" for="basicinput">Choisir une photo</label>
-                                <div class="controls">
-                                    <input type="file" name="path" data-original-title="" class="span8 tip">
-                                </div>
+                        </div>
+
+                       <div class="control-group">
+                            <label class="control-label" for="file">Fichier </label>
+                            <div class="controls">
+                                <input type='file' name="path">
                             </div>
-                            <br/><br/>
-                            <div class="control-group">
-                                <div class="controls">
-                                    <button type="submit" name="add" class="btn-success">Ajouter</button>
-                                    <button type="reset" class="btn-danger">Annuler</button>
-                                </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="basicinput">Description </label>
+                            <div class="controls">
+                                <textarea class="span8" rows="5" name="description"></textarea>
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="submit" class="btn btn-primary">Submit Form</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
+
             </div>
 
         </div>    
 
-        
         
     </div><!--/.content-->
 </div><!--/.span9-->
