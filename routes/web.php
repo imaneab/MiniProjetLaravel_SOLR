@@ -52,3 +52,8 @@ Route::get('main/logout', 'MainController@logout');
 //user
 Route::post('/user/checklogin', 'UserController@checklogin');
 Route::get('user/successlogin', 'UserController@successlogin');
+Route::get('/ajouterFichier', 'FileController@ajouterFichierPage');
+Route::post('/ajouterFichier', 'FileController@saveFile')->name('saveFile');
+Route::get('/listFichier/{id}', 'FileController@listFichier');
+
+

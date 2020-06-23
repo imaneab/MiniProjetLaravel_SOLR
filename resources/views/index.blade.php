@@ -37,11 +37,10 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-
 						<li class="main_nav_item"><a href="#">Acceuil</a></li>
 						<li class="main_nav_item"><a href="#">A propos</a></li>
 						<li class="main_nav_item"><a href="courses.html">Services</a></li>
-						<li class="main_nav_item"><a href="elements.html">elements</a></li>
+					<!--	<li class="main_nav_item"><a href="elements.html">elements</a></li> -->
 						<li class="main_nav_item"><a href="news.html">Actualités</a></li>
 						<li class="main_nav_item"><a href="connexion">Connexion</a></li>
 					</ul>
@@ -52,7 +51,7 @@
 			<img src="images/phone-call.svg" alt="">
 			<span>+212656200007</span>
 		</div>
-	
+
 		<!-- Hamburger -->
 		<div class="hamburger_container">
 			<i class="fas fa-bars trans_200"></i>
@@ -109,7 +108,7 @@
 <!-- Hero Slider -->
 <div class="hero_slider_container">
 	<div class="hero_slider owl-carousel">
-	
+
 	<?php
          $i = 0;
          foreach($actualites as $row){
@@ -120,10 +119,10 @@
 
 			 ?>
 		<!-- Hero Slide -->
-		
+
 		<div class="hero_slide">
-		<div class="hero_slide_background <?= $actives; ?>" style="background-image:url(<?= $row['image_path']; ?>)"> 
-		<img src="{{ URL::to('/image_path') }}/{{ $row->image_path }}"/>   
+		<div class="hero_slide_background <?= $actives; ?>" style="background-image:url(<?= $row['image_path']; ?>)">
+		<img src="{{ URL::to('/image_path') }}/{{ $row->image_path }}"/>
         </div>
 		<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 
@@ -131,7 +130,7 @@
 							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><?= $row['description']; ?></h1>
 						</div>
 					</div>
-		
+
 		</div>
 		<?php $i++; }?>
 	</div>
