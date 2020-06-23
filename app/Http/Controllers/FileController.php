@@ -68,4 +68,8 @@ class FileController extends Controller
         return view('Admin.listFiles', ['files' => $files]);
 
     }
+
+    function rechercher(){
+        return view('User.rechercher');
+    }
 }
