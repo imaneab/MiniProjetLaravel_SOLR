@@ -42,7 +42,7 @@
 						<li class="main_nav_item"><a href="courses.html">Services</a></li>
 					<!--	<li class="main_nav_item"><a href="elements.html">elements</a></li> -->
 						<li class="main_nav_item"><a href="news.html">Actualités</a></li>
-						<li class="main_nav_item"><a href="connexion">Connexion</a></li>
+						<li class="main_nav_item"><a href="{{ route('connexion') }}">Connexion</a></li>
 					</ul>
 				</div>
 			</nav>

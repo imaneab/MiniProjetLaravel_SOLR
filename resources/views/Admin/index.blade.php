@@ -33,7 +33,8 @@
 
 						<div class="module">
 							<div class="module-head">
-								<h3>Gestion des actualités</h3>
+                                <h3>Gestion des actualités</h3>
+                                                             
 							</div>
 							<div class="module-body">
 
@@ -54,8 +55,8 @@
                             
 							<div class="module-body table">
                             <div class="col-sm-4">
-                            <a href="create">
-                              <button type="button" class="btn btn-info add-new" style="margin-left: 620px;"><i class="fa fa-plus"></i>Ajouter une nouvelle actualité</button>
+                            <a href="{{ route('actualites.create') }}">
+                              <button type="button" class="btn btn-info add-new" style="margin-left: 30%;"><i class="fa fa-plus"></i>Ajouter une nouvelle actualité</button>
                             </a>
                             </div>
                              <br/>

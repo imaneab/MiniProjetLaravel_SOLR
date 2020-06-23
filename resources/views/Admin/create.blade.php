@@ -22,10 +22,10 @@
                              </div>
                              @endif
                              <div align="right">
-                             <a href="index">Retour</a>
+                             <a href="{{ route('actualites.index') }}">Retour</a>
                              </div>
 
-									<form method="post" action="{{ route('store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
+									<form method="post" action="{{ route('actualites.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
                                     @csrf
 										<br/>
                                         <br/>

@@ -46,7 +46,7 @@
    @endif
 
    <div class="card-body">
-                <form method="post" action="{{ url('/user/checklogin') }}">
+                <form method="post" action="{{ route('user_checklogin') }}">
                      {{ csrf_field() }}
 					<div class="input-group form-group">
 						<div class="input-group-prepend">

@@ -47,6 +47,6 @@ class UserController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('main');
+        return redirect('home');
     }
 }

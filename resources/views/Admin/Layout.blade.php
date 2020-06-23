@@ -44,7 +44,7 @@
                                     <li><a href="#">Modifier Profile</a></li>
                                     <li><a href="#">Parametres du compte</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="{{ url('/main/logout') }}">Logout</a></li>
+                                <li><a href="{{ route('logout') }}"> Logout</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -65,16 +65,19 @@
                             <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Acceuil
                                 </a></li>
-                                <li><a href="index"><i class="menu-icon icon-bullhorn"></i>Gestion des actualités </a>
+                            <li><a href="{{ route('actualites.index') }}"><i class="menu-icon icon-bullhorn"></i>Gestion des actualités </a>
                                 </li>
-                                <li><a href="message.html"><i class="menu-icon icon-paste"></i>Gestion des fichiers </a></li>
+                                <li><a href="{{ route('documents.index') }}"><i class="menu-icon icon-paste"></i>Gestion des fichiers </a></li>
                                 <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
                                 <li><a href="listAllFiles"><i class="menu-icon icon-tasks"></i>Liste des fichiers étudiants</a></li>
                             </ul>
 
                             <ul class="widget widget-menu unstyled">
+                                
+                                <li><a href="{{ route('logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> 
 
-                                <li><a href="{{ url('/main/logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                                <!-- <li><a href="{{ url('/main/logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li> -->
+
                             </ul>
                         </div>
                         <!--/.sidebar-->
