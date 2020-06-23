@@ -56,13 +56,16 @@ class FileController extends Controller
 
     function listFichier($id){
 
-            //DB::table('users')->where('name', 'John')->first();
-
             $files = DB::select('select * from files where user_id = ?', [$id] );
 
-            if($files){
-                return view('User.listFiles', ['files' => $files]);
-            }
+            return view('User.listFiles', ['files' => $files]);
+
+    }
+
+    function listAllFiles(){
+        $files = DB::select('select * from files');
+
+        return view('Admin.listFiles', ['files' => $files]);
 
     }
 }

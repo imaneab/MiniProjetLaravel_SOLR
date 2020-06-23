@@ -2,7 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-class UsersTablesSeeder extends Seeder
+
+class AddUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,19 +13,6 @@ class UsersTablesSeeder extends Seeder
     public function run()
     {
         $users = [
-            [
-                'name'    => 'Abouakil Imane',
-                'email'    => 'admin@gmail.com',
-                'password'   =>  Hash::make('password'),
-                'remember_token' =>  str_random(10),
-                'is_admin' => 1,
-            ],
-            [
-                'name'    => 'Abdennour Imane',
-                'email'    => 'imane.abdennour0@gmail.com',
-                'password'   =>  Hash::make('password'),
-                'remember_token' =>  str_random(10),
-            ],
             [
                 'name'    => 'Abouakil Assia',
                 'email'    => 'assia1@gmail.com',

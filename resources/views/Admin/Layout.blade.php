@@ -34,7 +34,7 @@
                         </button>
                         </form>
                         <ul class="nav pull-right">
-                            
+
                             <li><a href="#">Parametres </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="<?php echo url('/'); ?>/images/user.png" class="nav-avatar" />
@@ -69,11 +69,11 @@
                                 </li>
                                 <li><a href="message.html"><i class="menu-icon icon-paste"></i>Gestion des fichiers </a></li>
                                 <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-tasks"></i>Liste des fichiers étudiants</a></li>
+                                <li><a href="listAllFiles"><i class="menu-icon icon-tasks"></i>Liste des fichiers étudiants</a></li>
                             </ul>
-                         
+
                             <ul class="widget widget-menu unstyled">
-                                
+
                                 <li><a href="{{ url('/main/logout') }}"><i class="menu-icon icon-signout"></i>Logout </a></li>
                             </ul>
                         </div>
@@ -98,5 +98,5 @@
         <script src="<?php echo url('/'); ?>/scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
         <script src="<?php echo url('/'); ?>/scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="<?php echo url('/'); ?>/scripts/common.js" type="text/javascript"></script>
-      
+
     </body>
