@@ -28,9 +28,12 @@
             <div id="espace_search">
                   
                  <div id="div1">
-                 <p class="cntr">
-                 <i class="icon-search"></i>
-                 </p>
+                    <p class="cntr">
+                    <i class="icon-search"></i>
+                    </p>
+                 </div>
+                 <div class="loader">
+                    <img src="<?php echo url('/'); ?>/images/ajax_loader.gif">
                  </div>
                         </div>
                         
@@ -44,6 +47,7 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
+    $('.loader').hide();
     $("#ajax1").click(function(e){
         e.preventDefault();
         $.ajaxSetup({
@@ -58,11 +62,19 @@ $(document).ready(function(){
         //   Console.log(data);
         //    $("#div1").html(data);
         //});
-        var dataString = "search="+search+"&rech="+rech;
-        $.ajax({
+        if(search!="" && rech!=""){
+            var dataString = "search="+search+"&rech="+rech;
+            $.ajax({
                type: "POST",
                url: "{{ url('engine') }}",
                data: dataString,
+               beforeSend: function() {
+                    $('#div1').hide();
+                    $('.loader').show();
+                },
+                complete: function(){
+                    $('.loader').hide();
+                },
                success: function (result) {
                    $("#espace_search").html(result.message);
                },
@@ -70,6 +82,8 @@ $(document).ready(function(){
                 $("#espace_search").html("<p style='color:red;text-align:center;'>ERROR</p>");
                }
            });
+        }
+        
     });
 
 
