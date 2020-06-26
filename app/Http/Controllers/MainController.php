@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actualite;
+use App\Document;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -12,7 +13,12 @@ class MainController extends Controller
     public function index()
     {        
         $actualites = Actualite::all();
-        return view('index', compact('actualites'));
+        $documents = Document::all();
+
+        return view('index', [
+            'actualites' => $actualites,
+            'documents' => $documents
+        ]);
     }
 
     function indexAdmin()

@@ -16,6 +16,15 @@
                 </div>
 
                 <div class="module-body">
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <form method="post" action="{{ route('documents.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
                         @csrf
                     <input type="hidden" name="id" value="{{Auth::user()->id}}">
