@@ -46,6 +46,12 @@
 		                                    	<input type="hidden" name="hidden_image" value="{{ $actualites->image_path }}" />
                                             </div>
 										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Lien</label>
+											<div class="controls">
+												<input type="text" name="lien" value="{{ $actualites->lien }}" placeholder="Ajouter le lien d l actualité..." data-original-title="" class="span8 tip">
+											</div>
+										</div>
                                          <br/><br/>
 										<div class="control-group">
 											<div class="controls">

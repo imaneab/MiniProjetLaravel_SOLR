@@ -107,6 +107,7 @@
 <div class="home">
 
 
+
 <!-- Hero Slider -->
 <div class="hero_slider_container">
 	<div class="hero_slider owl-carousel">
@@ -128,10 +129,15 @@
         </div>
 		<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 
-						<div class="hero_slide_content text-center">
-							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><?= $row['description']; ?></h1>
-						</div>
-					</div>
+			<div class="hero_slide_content text-center">
+				<h2 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">
+					<span><?= $row['description']; ?></span>
+				</h2><br><br>
+				<button data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut" type="button" class="btn btn-warning" onclick="window.location.href = '<?= $row['lien']; ?>'" style="border-radius: 0px; opacity: 0.8;">
+					Plus de détails..
+				</button>
+			</div>
+	</div>
 
 		</div>
 		<?php $i++; }?>

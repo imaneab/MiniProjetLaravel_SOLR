@@ -22,7 +22,7 @@
                              </div>
                              @endif
                              <div align="right">
-                             <a href="{{ route('actualites.index') }}">Retour</a>
+                             <a href="index">Retour</a>
                              </div>
 
 									<form method="post" action="{{ route('actualites.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
@@ -41,6 +41,12 @@
 											<label class="control-label" for="basicinput">Choisir une photo</label>
 											<div class="controls">
 												<input type="file" name="image_path" data-original-title="" class="span8 tip">
+											</div>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Lien</label>
+											<div class="controls">
+												<input type="text" name="lien" placeholder="Ajouter le lien de l'actualité" data-original-title="" class="span8 tip">
 											</div>
 										</div>
                                          <br/><br/>

@@ -685,20 +685,27 @@ section
 	-o-transform: translateY(30px);
 	transform: translateY(30px);
 }
-.hero_slide_content h1
+.hero_slide_content h2
 {
 	font-size: 72px;
 	font-weight: 400;
 	color: #FFFFFF;
 }
-.hero_slide_content h1 span
+.hero_slide_content h2 span
 {
 	background: #ffb606;
-	padding-left: 13px;
-	padding-right: 13px;
+	opacity: 0.8;
+	
+	border: 2px solid #ffb606;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 	margin-left: -12px;
 	margin-right: -12px;
 }
+
+
 .animated
 {
 	-webkit-animation-duration : 1s !important;

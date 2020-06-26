@@ -17,6 +17,7 @@ class CreateActualitesTable extends Migration
             $table->bigIncrements('id');
             $table->string('image_path');
             $table->string('description');
+            $table->string('lien');
             $table->timestamps();
         });
     }
