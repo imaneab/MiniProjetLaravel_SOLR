@@ -1,0 +1,28 @@
+div#espace_search{
+    background-color: rgb(228, 229, 230);
+    height: auto !important;
+    min-height: 270px;
+    
+}
+
+div#div1{
+    
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.cntr{
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 30px;
+}
+
+p.cntr i{
+    font-size: 100px;
+}
+
+table.equl td{
+    width: 100px;
+}
