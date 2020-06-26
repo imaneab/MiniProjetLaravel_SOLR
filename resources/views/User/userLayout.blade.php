@@ -4,11 +4,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>Acceuil - Admin</title>
-        <link type="text/css" href="<?php echo url('/'); ?>/bootstrap_assets/css/bootstrap.css" rel="stylesheet">
+        <link type="text/css" href="<?php echo url('/'); ?>/bootstrap_assets/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/bootstrap_assets/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link rel="icon" type="image/jpg" href="<?php echo url('/'); ?>/images/logoEnsa.jpg" style="width: 100px;height: 100px;" />
         <link type="text/css" href="<?php echo url('/'); ?>/css/theme.css" rel="stylesheet">
+        <link type="text/css" href="<?php echo url('/'); ?>/css/style_search.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/images/icons//css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
             rel='stylesheet'>
@@ -71,6 +73,7 @@
 
         <!--Ici, le contenu-->
            
+        <script src="<?php echo url('/'); ?>/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
         @yield('content')
         
         <!--/.wrapper-->
@@ -79,7 +82,7 @@
                 <b class="copyright">&copy; 2020 ENSAS - Moteur de recherche - SOLR </b>All rights reserved.
             </div>
         </div>
-        <script src="<?php echo url('/'); ?>/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+       
         <script src="<?php echo url('/'); ?>/scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
         <script src="<?php echo url('/'); ?>/bootstrap_assets/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?php echo url('/'); ?>/scripts/flot/jquery.flot.js" type="text/javascript"></script>

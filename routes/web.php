@@ -82,4 +82,6 @@ Route::get('/listFichier/{id}', 'FileController@listFichier');
 Route::get('/rechercher', 'FileController@rechercher');
 
 
+Route::post('/engine' ,'FileController@ajaxRecherche')->name('engine');
 
+Route::get('/file/{id}', "FileController@download");
