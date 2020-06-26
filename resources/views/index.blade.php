@@ -140,7 +140,7 @@
 	<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
 	<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
 </div>
-
+{{-- ++++++++++++++++++++++++++++++ BOXEES +++++++++++++++++++++++++++++++++ --}}
 <div class="hero_boxes">
 	<div class="hero_boxes_inner">
 		<div class="container">
@@ -166,11 +166,11 @@
 						<img src="images/earth-globe.svg" class="svg" alt="">
 						<div class="hero_box_content">
 							<h2 class="hero_box_title">
-								<a class="hero_box_title" href="http://www.ensas.uca.ma/" style=" color: white;">
+								<a class="hero_box_title" href="http://www.ensas.uca.ma/formations.html" style=" color: white;">
 									Formations
 								</a>
 							</h2>
-							<a href="http://www.ensas.uca.ma/" class="hero_box_link">voir plus</a>
+							<a href="http://www.ensas.uca.ma/formations.html" class="hero_box_link">voir plus</a>
 							
 						</div>
 					</div>
@@ -468,7 +468,7 @@
 		</div>
 	</div>
 
-	{{-- BOXES --}}
+	{{-- !!!!!!!! BOXES !!!!!!!!!!!--}}
 	<div class="hero_boxes" >
 
 		<div class="hero_boxes_inner">
@@ -477,9 +477,9 @@
 
 					<div class="col-lg-4 hero_box_col mb-5">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/earth-globe.svg" class="svg" alt="">
+							<img src="images/icons/mes_icones/service_prof_etudiant.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Gestion des emplois du temps</h2>
+								<h2 class="hero_box_title">Services Professeur / Etudiant</h2>
 								
 							</div>
 						</div>
@@ -487,53 +487,50 @@
 
 					<div class="col-lg-4 hero_box_col mb-5">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/books.svg" class="svg" alt="">
+							<img src="images/icons/mes_icones/service_preselection.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Library</h2>
-								<a href="courses.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Service de Présélection</h2>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-lg-4 hero_box_col mb-5">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/professor.svg" class="svg" alt="">
+							<img src="images/icons/mes_icones/service_formation.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Teachers</h2>
-								<a href="teachers.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Service de Formation Continue</h2>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-lg-4 hero_box_col mb-5">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/books.svg" class="svg" alt="">
+							<img src="images/icons/mes_icones/service_choix_filiere.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Library</h2>
-								<a href="courses.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Gestion de Choix de Filière</h2>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-lg-4 hero_box_col mb-5">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/professor.svg" class="svg" alt="">
+							<img src="images/mortarboard.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Teachers</h2>
-								<a href="teachers.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Gestion des PFEs</h2>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-lg-4 hero_box_col mb-5">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/professor.svg" class="svg" alt="">
+							<img src="images/icons/mes_icones/service_stage.svg" class="svg" alt="">
 							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Teachers</h2>
-								<a href="teachers.html" class="hero_box_link">view more</a>
+								<h2 class="hero_box_title">Gestion des Stages / Mini-Prjets</h2>
 							</div>
 						</div>
 					</div>
+
+				
 
 					<br><br>
 
