@@ -62,7 +62,7 @@
 								<table id="tab" cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
 									<thead>
 										<tr>
-                                            <th>Numero</th>
+                                            <th>N°</th>
 											<th>Image</th>
 											<th>Description</th>
                                             <th>Lien</th>
@@ -74,23 +74,27 @@
 									<tbody>
                                     @foreach($actualites as $row)
 										<tr class="odd gradeX">
-                                            <td>{{ $row->id }}</td>
+                                            <td>{{ ($loop->index + 1 )}}</td>
 											<td><img src="{{ URL::to('/image_path') }}/{{ $row->image_path }}" class="img-thumbnail" width="75" /></td>
 											<td>{{ $row->description }}</td>
                                             <td>{{ $row->lien }}</td>
                                             <td>{{ $row->created_at }}</td>
                                            
                                             <td>
-                                            
-                                            <form action="{{ route('actualites.destroy',$row->id) }}" method="POST">
-   
-                                            <a style="border:0px;background-color: Transparent"><a href="{{ route('actualites.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-
-                                          @csrf
-                                          @method('DELETE')
-
-                                          <button style="border:0px;background-color: Transparent;margin-top:-14px"><a class="delete" type="submit" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button>
-                                          </form>
+                                                <form action="{{ route('actualites.destroy',$row->id) }}" method="POST">
+                                       
+                                                    <a href="{{ route('actualites.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip">
+                                                        <i class="material-icons">&#xE254;</i>
+                                                    </a>                                        
+            
+                                                    @csrf
+                                                    @method('DELETE')
+            
+                                                    <button style="border:0px;background-color: Transparent;margin-top:-14px"><a class="delete" type="submit" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a></button>
+                                                    
+            
+                                                </form>
+                                                
                                             </td>
                                            
 									
@@ -98,17 +102,7 @@
                                         @endforeach
 									
 									</tbody>
-									<tfoot>
-										<tr>
-                                        <th>Numero</th>
-											<th>Image</th>
-											<th>Description</th>
-                                            <th>Lien</th>
-                                            <th>Date de création</th>
-                                            <th>Action</th>
-										
-										</tr>
-									</tfoot>
+									
 								</table>
 							</div>
 						</div><!--/.module-->

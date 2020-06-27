@@ -31,7 +31,7 @@
     <div class="content">
 
         <div class="module">
-            <h1 style="margin-left: 25%; margin-top:2%; color: #E34724" >Gestion des documents</h2>
+            <h1 style="margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des documents</h2>
             <div class="module-body">
 
             @if($errors->any())
@@ -67,16 +67,16 @@
                 <div class="module-body table">
                 <div class="col-sm-4">
                 <a href="{{ route('documents.create') }}">
-                <button type="button" class="btn btn-info add-new" style="margin-left: 30%;"><i class="fa fa-plus"></i>Ajouter un nouveau document</button>
+                <button type="button" class="btn btn-info add-new" style="margin-left: 620px;"><i class="fa fa-plus"></i>Ajouter un nouveau document</button>
                 </a>
                 </div>
                 <br/>
-                    <table id="tab" cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped display" width="100%">
+                    <table id="tab" cellpadding="0" cellspacing="0" border="0" class=" text-center datatable-1 table table-bordered table-striped display" width="100%">
                         <thead>
                             <tr>
                                 <th>N°</th>
                                 <th>Titre</th>
-                                <th>Description</th>
+                                <th class="text-center">Description</th>
                                 <th>Download</th>
                                 <th>Action</th>
                                 
@@ -95,7 +95,7 @@
                                     </a> 
                                 </td>
                             
-                                <td>   
+                                <td class="text-center">   
                                                                 
                                     <form action="{{ route('documents.destroy',$row->id) }}" method="POST">
                                        
