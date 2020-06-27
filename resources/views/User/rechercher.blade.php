@@ -57,13 +57,14 @@ $(document).ready(function(){
         });
         var search = $("#search").val();
         var rech = $("#rech option:selected").val();
+        var page = 1;
         //alert(search+" "+rech);
         //$.post("engine",{search:search, rech:rech},function(data){
         //   Console.log(data);
         //    $("#div1").html(data);
         //});
         if(search!="" && rech!=""){
-            var dataString = "search="+search+"&rech="+rech;
+            var dataString = "search="+search+"&rech="+rech+"&page="+page;
             $.ajax({
                type: "POST",
                url: "{{ url('engine') }}",
@@ -95,7 +96,24 @@ $(document).ready(function(){
 	        }
         });
         var dataString = $(this).attr('id');
-        alert(dataString);
+        $.ajax({
+               type: "POST",
+               url: "{{ url('engine') }}",
+               data: dataString,
+               beforeSend: function() {
+                    $('#div1').hide();
+                    $('.loader').show();
+                },
+                complete: function(){
+                    $('.loader').hide();
+                },
+               success: function (result) {
+                   $("#espace_search").html(result.message);
+               },
+               error: function(){
+                $("#espace_search").html("<p style='color:red;text-align:center;'>ERROR</p>");
+               }
+           });
    });
 
 
