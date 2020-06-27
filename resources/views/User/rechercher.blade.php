@@ -11,7 +11,7 @@
                 <div class="justify-content-between d-inline-flex col-6">
                     <input name="search" id="search" class="form-control mr-sm-2" type="search" placeholder="Taper votre recherche ici" aria-label="Chercher">
                     
-                    <input type="button"  class="btn btn-outline-success" id="ajax1" value="search">
+                    <input type="button"  class="btn btn-success" id="ajax1" value="search">
                 </div>
                 <div class="d-inline-flex justify-content-between col-4">
                     <select id="rech" name="rech" class="custom-select col-12">
@@ -85,6 +85,18 @@ $(document).ready(function(){
         }
         
     });
+
+    $('#espace_search').on('click', 'input', function (e){
+        
+        e.preventDefault();
+        $.ajaxSetup({
+	        headers: {
+		        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	        }
+        });
+        var dataString = $(this).attr('id');
+        alert(dataString);
+   });
 
 
 });
