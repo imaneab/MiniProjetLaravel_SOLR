@@ -104,7 +104,7 @@ class FileController extends Controller
                 $doImport = file_get_contents("http://localhost:8983/solr/FileCollection/dataimport?command=full-import");
                 $file = file_get_contents($url."&start=".$start);
                 eval("\$result = " . $file . ";");
-                $numOfPages = ceil($result["response"]["numFound"]/20);
+                $numOfPages = ceil($result["response"]["numFound"]/10);
                 
                 
 
@@ -175,6 +175,13 @@ class FileController extends Controller
                 
                 $tbody = $tbody."</tbody></table>";
                 $res=$thead.$tbody;
+                $pagin = "<br><p class='cntr'>";
+                for($i=0; $i<$numOfPages; $i++){
+                    $pagin .= "<input type='button' class='btn btn-warning'  id='search=$search&rech=$rech' value='".($i+1)."'>";
+                }
+
+                $res .= $pagin."</p>";
+
                 return response()->json(["message"=>$res]);
             }
 
