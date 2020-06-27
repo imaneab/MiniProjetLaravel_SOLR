@@ -91,7 +91,7 @@ class FileController extends Controller
                         "<th scope='col'>#</th>".
                         "<th scope='col'>Titre</th>".
                         "<th scope='col'>Description</th>".
-                        "<th scope='col'>Importer par</th>".
+                        "<th scope='col'>Importé par</th>".
                         "<th scope='col'>Document</th>".
                      "</tr>".
                    "</thead>";
@@ -167,12 +167,12 @@ class FileController extends Controller
                 $tbody = "<tbody>";
                 $count = count($title_array);
                 for ($i = 0; $i < $count; $i++){
-                    $tbody = $tbody."<tr><td>".($i+1)."</td>";
+                    $tbody = $tbody."<tr><td>".($i+$start+1)."</td>";
                     $tbody = $tbody."<td>".$title_array[$i]."</td>";
                     $tbody = $tbody."<td>".$desc_array[$i]."</td>";
                     $tbody = $tbody."<td>".$user_array[$i]."</td>";
                     $id = $id_array[$i];
-                    $tbody = $tbody."<td><a href='/file/$id'>télécharger</a></td></tr>";
+                    $tbody = $tbody."<td  class='down'><a href='/file/$id'><i class='icon-cloud-download'></i></a></td></tr>";
                 }
                 
                 $tbody = $tbody."</tbody></table>";
