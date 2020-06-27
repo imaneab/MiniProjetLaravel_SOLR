@@ -33,3 +33,7 @@ div.loader{
     justify-content: center;
     align-items: center;
 }
+
+.cntr input{
+    margin:10px;
+}

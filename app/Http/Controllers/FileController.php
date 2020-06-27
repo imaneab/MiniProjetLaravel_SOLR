@@ -82,6 +82,7 @@ class FileController extends Controller
         if($request->ajax()){
             $search = $request->get('search');
             $rech = $request->get('rech');
+            $page = $request->get('page');
 
             if($search!="" && $rech!=""){
                 $thead="<table class='table'>".
@@ -95,16 +96,17 @@ class FileController extends Controller
                      "</tr>".
                    "</thead>";
 
-                $page = 1;
+                
                 $str = urlencode($search);
                 $query = "$rech:*$str*";
                 
-                $start = $page*10-10;
+                $start = $page*5-5;
+                $rows = 5;
                 $url = "http://localhost:8983/solr/FileCollection/select?q=$query&wt=php";
                 $doImport = file_get_contents("http://localhost:8983/solr/FileCollection/dataimport?command=full-import");
-                $file = file_get_contents($url."&start=".$start);
+                $file = file_get_contents($url."&start=".$start."&rows=".$rows);
                 eval("\$result = " . $file . ";");
-                $numOfPages = ceil($result["response"]["numFound"]/10);
+                $numOfPages = ceil($result["response"]["numFound"]/5);
                 
                 
 
@@ -177,7 +179,7 @@ class FileController extends Controller
                 $res=$thead.$tbody;
                 $pagin = "<br><p class='cntr'>";
                 for($i=0; $i<$numOfPages; $i++){
-                    $pagin .= "<input type='button' class='btn btn-warning'  id='search=$search&rech=$rech' value='".($i+1)."'>";
+                    $pagin .= "<input type='button' class='btn btn-warning'  id='search=$search&rech=$rech&page=".($i+1)."' value='".($i+1)."'>";
                 }
 
                 $res .= $pagin."</p>";
