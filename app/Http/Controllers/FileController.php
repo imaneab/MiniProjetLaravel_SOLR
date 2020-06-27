@@ -177,12 +177,12 @@ class FileController extends Controller
                 
                 $tbody = $tbody."</tbody></table>";
                 $res=$thead.$tbody;
-                $pagin = "<br><p class='cntr'>";
+                $pagin = "<br><div class='bas'><p class='cntr'>";
                 for($i=0; $i<$numOfPages; $i++){
                     $pagin .= "<input type='button' class='btn btn-warning'  id='search=$search&rech=$rech&page=".($i+1)."' value='".($i+1)."'>";
                 }
 
-                $res .= $pagin."</p>";
+                $res .= $pagin."</p></div>";
 
                 return response()->json(["message"=>$res]);
             }
