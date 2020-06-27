@@ -1,13 +1,12 @@
 div#espace_search{
     background-color: rgb(228, 229, 230);
-    height: auto !important;
-    min-height: 270px;
+    height: 340px;
     
 }
 
 div#div1{
     
-    height: 280px;
+    height: 330px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,4 +35,11 @@ div.loader{
 
 .cntr input{
     margin:10px;
+}
+
+div.bas{
+    position: absolute;
+    bottom:10px;
+    left:0;
+    right:0;
 }
