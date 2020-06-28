@@ -26,6 +26,12 @@ class UsersTablesSeeder extends Seeder
                 'remember_token' =>  str_random(10),
             ],
             [
+                'name'    => 'Jnaini zineb',
+                'email'    => 'jnainizineb@gmail.com',
+                'password'   =>  Hash::make('password'),
+                'remember_token' =>  str_random(10),
+            ],
+            [
                 'name'    => 'Abouakil Assia',
                 'email'    => 'assia1@gmail.com',
                 'password'   =>  Hash::make('password'),

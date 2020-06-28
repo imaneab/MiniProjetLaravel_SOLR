@@ -25,6 +25,12 @@ class AddUserSeeder extends Seeder
                 'password'   =>  Hash::make('password'),
                 'remember_token' =>  str_random(10),
             ],
+            [
+                'name'    => 'Jnaini zineb',
+                'email'    => 'jnainizineb@gmail.com',
+                'password'   =>  Hash::make('password'),
+                'remember_token' =>  str_random(10),
+            ],
         ];
 
         foreach($users as $user){
