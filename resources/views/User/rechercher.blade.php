@@ -1,10 +1,12 @@
 @extends('User.userLayout')
 
 @section('content')
+<link type="text/css" href="<?php echo url('/'); ?>/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+            <script src="<?php echo url('/'); ?>/fontawesome-free-5.13.0-web/js/all.js" type="text/javascript"></script>
 <div class="span9 col-lg-9">
 	<div class="content">
 		<div class="module">
-        <div style="border-radius:5px;height: auto !important;min-height: 320px;">
+        <div style="border-radius:10px;height: auto !important;min-height: 300px;">
         <form id="engine" action="#">
             <nav class="navbar navbar-dark bg-dark navbar-expand justify-content-between" style="border-top-left-radius: 5px;border-top-right-radius: 5px;">
 
