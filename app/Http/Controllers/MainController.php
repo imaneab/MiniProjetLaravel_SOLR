@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Actualite;
 use App\Document;
+use App\Evenement;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+use Carbon\Carbon;
 
 class MainController extends Controller
 {
@@ -14,10 +16,12 @@ class MainController extends Controller
     {        
         $actualites = Actualite::all();
         $documents = Document::all();
+        $evenements = Evenement::all();
 
         return view('index', [
             'actualites' => $actualites,
-            'documents' => $documents
+            'documents' => $documents,            
+            'evenements' => $evenements
         ]);
     }
 

@@ -6,7 +6,7 @@
 	<div class="content">
 
 		<div class="module">
-			<h1 style="margin-left: 25%; margin-top:2%; color: #E34724" >Gestion des documents</h2>
+			<h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des Documents</h2>
 			<div class="module-body">
 
 			<div class="module">
@@ -25,7 +25,7 @@
 				</div>
 				@endif
 				<div align="right">
-					<a href="{{ route('documents.index') }}">Retour</a>
+					<a style="text-decoration:underline; font-size: 15px; margin-right: 5%; " href="{{ route('documents.index') }}">Retour</a>
 				</div>
 
 						<form method="post" action="{{ route('documents.update', $document->id) }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >

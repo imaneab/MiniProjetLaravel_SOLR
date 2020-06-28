@@ -363,93 +363,37 @@
 
 			<div class="event_items">
 
-				<!-- Event Item -->
+				@foreach ($evenements as $evenement)
+
 				<div class="row event_item">
 					<div class="col">
 						<div class="row d-flex flex-row align-items-end">
 
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">20</div>
-									<div class="event_month">Juin</div>
+									<div class="event_day">{{ Carbon\Carbon::parse($evenement->date)->format('d') }}</div>
+									<div class="event_month">{{ Carbon\Carbon::parse($evenement->date)->format('F') }}</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Accès au ENSAs Maroc</a></div>
-									
-									<p>L'ENSA Safi partage une annonce relative à l'accès aux Ecoles Nationales des Sciences Appliquées au titre de l'année universitaire 2020/2021. Vous trouverez ICI les informations complémentaires.</p>
+									<div class="event_name"><a class="trans_200" href="#">{{ $evenement->title }}</a></div>
+									<p>{{ $evenement->description }}</p>
 								</div>
 							</div>
 
 							<div class="col-lg-4 order-lg-3 order-1">
 								<div class="event_image  text-center p-4" style="border-color: #FFB606; border-style: solid;">
-									<img src="images/icons/mes_icones/welcome.svg" alt="Bienvenue !"  style=" width:80%; height:80%;">
+									<img src="storage/admin_documents/{{ $evenement->path_image }}" alt="Bienvenue !"  style=" width:80%; height:80%;">
 								</div>
 							</div>
 
 						</div>
 					</div>
 				</div>
-
-				<!-- Event Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">26</div>
-									<div class="event_month">Décembre</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Résultats du concours de recrutement</a></div>
-									<p>L'Ecole Nationale des Sciences Appliquées de Safi annonce le résultat défintif du concours de recrutement d'un Professeur Assistant spécialité Physiques appliquées, Session 29/11/2019 , vous trouverez ICI le résultat.</p>
-								</div>
-							</div>
-
-							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image  text-center p-4" style="border-color: #FFB606; border-style: solid;">
-									<img src="images/icons/mes_icones/notes.svg" alt="Notes"  style=" width:80%; height:80%;">
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- Event Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">02</div>
-									<div class="event_month">Septembre</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content ">
-									<div class="event_name"><a class="trans_200" href="#">Demandes de Transferts vers l'ENSA Safi</a></div>
-									<p>Le dernier délais de dépôt des demandes de transfert vers l'ENSA Safi est le Lundi 02/09/2019 à 16h:00. La demande de transfert à télécharger ICI. Les demandes sont à déposer au sécrétariat du directeur adjoint au 1er étage du bâtiement administratif.</p>
-								</div>
-							</div>
-
-							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image text-center p-4" style="border-color: #FFB606; border-style: solid;" >
-									<img src="images/icons/mes_icones/transfert.svg" alt="Transfert" style=" width:80%; height:80%;" >
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
+					
+				@endforeach
 
 			</div>
 

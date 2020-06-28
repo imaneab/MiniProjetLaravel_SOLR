@@ -62,7 +62,7 @@
                         Accueil
                         </a></li>
                     <li><a href="{{ route('actualites.index') }}"><i class="menu-icon icon-bullhorn"></i>Gestion des Actualités </a>
-                        <li><a href="{{ route('actualites.index') }}"><i class="menu-icon icon-bullhorn"></i>Gestion des Evénements </a>
+                        <li><a href="{{ route('evenements.index') }}"><i class="menu-icon icon-bullhorn"></i>Gestion des Evénements </a>
                         </li>
                         <li><a href="{{ route('documents.index') }}"><i class="menu-icon icon-paste"></i>Gestion des Documents </a></li>
                         <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de Recherche</a></li>

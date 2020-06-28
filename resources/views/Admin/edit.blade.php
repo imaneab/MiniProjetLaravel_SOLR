@@ -7,23 +7,28 @@
 					<div class="content">
 
 						<div class="module">
-							<div class="module-head">
-								<h3>Ajouter une actualité</h3>
-							</div>
+							<h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des Actualités</h1>
+            
 							<div class="module-body">
-
-                            @if($errors->any())
-                            <div class="alert alert-danger">
-                             <ul>
-                             @foreach($errors->all() as $error)
-                             <li>{{ $error }}</li>
-                             @endforeach
-                             </ul>
-                             </div>
-                             @endif
-                             <div align="right">
-                             <a href="index"></a>
-                             </div>
+								<div class="module">
+									<div class="module-head">
+										<h3>Ajouter un Evénement</h3>
+									</div>
+								
+									
+								<div class="module-body">
+									@if($errors->any())
+									<div class="alert alert-danger">
+									<ul>
+									@foreach($errors->all() as $error)
+									<li>{{ $error }}</li>
+									@endforeach
+									</ul>
+									</div>
+									@endif
+									<div align="right">
+										<a href="{{ route('actualites.index') }}" style="text-decoration:underline; font-size: 15px; margin-right: 5%;   ">Retour</a>
+									</div><br>
 
 									<form method="post" action="{{ route('actualites.update', $actualites->id) }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
                                     @csrf
@@ -37,7 +42,12 @@
 												<input type="text" name="description" value="{{ $actualites->description }}" placeholder="Ajouter une description à l actualité..." data-original-title="" class="span8 tip">
 											</div>
 										</div>
-										
+										<div class="control-group">
+											<label class="control-label" for="basicinput">Lien</label>
+											<div class="controls">
+												<input type="text" name="lien" value="{{ $actualites->lien }}" placeholder="Ajouter le lien d l actualité..." data-original-title="" class="span8 tip">
+											</div>
+										</div>
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Choisir une photo</label>
 											<div class="controls">
@@ -46,12 +56,7 @@
 		                                    	<input type="hidden" name="hidden_image" value="{{ $actualites->image_path }}" />
                                             </div>
 										</div>
-										<div class="control-group">
-											<label class="control-label" for="basicinput">Lien</label>
-											<div class="controls">
-												<input type="text" name="lien" value="{{ $actualites->lien }}" placeholder="Ajouter le lien d l actualité..." data-original-title="" class="span8 tip">
-											</div>
-										</div>
+										
                                          <br/><br/>
 										<div class="control-group">
 											<div class="controls">
@@ -60,6 +65,7 @@
 											</div>
 										</div>
 									</form>
+								</div>
 							</div>
 						</div>
 

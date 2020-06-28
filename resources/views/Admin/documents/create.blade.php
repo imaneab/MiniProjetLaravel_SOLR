@@ -7,7 +7,7 @@
     <div class="content">
 
         <div class="module">
-            <h1 style="margin-left: 25%; margin-top:2%; color: #E34724" >Gestion des documents</h2>
+            <h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des Documents</h1>
             <div class="module-body">
 
             <div class="module">
@@ -25,6 +25,9 @@
                             </ul>
                         </div>
                     @endif
+                    <div align="right">
+                        <a href="{{ route('documents.index') }}" style="text-decoration:underline; font-size: 15px; margin-right: 5%;   ">Retour</a>
+                    </div><br><br>
                     <form method="post" action="{{ route('documents.store') }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
                         @csrf
                     <input type="hidden" name="id" value="{{Auth::user()->id}}">

@@ -9,7 +9,7 @@
         color: #E34724;
     }
     table.table th:last-child {
-        width: 100px;
+        width: 14%;
     }
     table.table td a {
 		cursor: pointer;
@@ -32,9 +32,8 @@
 					<div class="content">
 
 						<div class="module">
-							<div class="module-head">
-								<h3>Gestion des actualités</h3>
-							</div>
+                            <h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des Actualités</h2>
+            
 							<div class="module-body">
 
                             @if($errors->any())
@@ -65,7 +64,7 @@
                                             <th>N°</th>
 											<th>Image</th>
 											<th>Description</th>
-                                            <th>Lien</th>
+                                            <th class="test">Lien</th>
                                             <th>Date de création</th>
                                             <th>Action</th>
 											
@@ -76,7 +75,7 @@
 										<tr class="odd gradeX">
                                             <td>{{ ($loop->index + 1 )}}</td>
 											<td><img src="{{ URL::to('/image_path') }}/{{ $row->image_path }}" class="img-thumbnail" width="75" /></td>
-											<td>{{ $row->description }}</td>
+											<td class="test">{{ $row->description }}</td>
                                             <td>{{ $row->lien }}</td>
                                             <td>{{ $row->created_at }}</td>
                                            

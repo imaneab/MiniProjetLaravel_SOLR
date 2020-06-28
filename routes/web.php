@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/actualites','ActualiteController');
 
 Route::resource('/documents', "DocumentController");
-
 Route::get('/documents/{document}/download', "DocumentController@download")->name('documents.download');
+
+Route::resource('/evenements', "EvenementController");
 
 //Route::get('/', 'ActualiteController@home_index');
 Route::get('/', 'MainController@index')->name('home');
