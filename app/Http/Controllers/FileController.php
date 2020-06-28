@@ -92,6 +92,7 @@ class FileController extends Controller
                         "<th scope='col'>Titre</th>".
                         "<th scope='col'>Description</th>".
                         "<th scope='col'>Importé par</th>".
+                        "<th scope='col'>Date d'importation</th>".
                         "<th scope='col'>Document</th>".
                      "</tr>".
                    "</thead>";
@@ -102,7 +103,8 @@ class FileController extends Controller
                 
                 $start = $page*5-5;
                 $rows = 5;
-                $url = "http://localhost:8983/solr/FileCollection/select?q=$query&wt=php";
+                $sort = urlencode("date_up desc");
+                $url = "http://localhost:8983/solr/FileCollection/select?q=$query&sort=$sort&wt=php";
                 $doImport = file_get_contents("http://localhost:8983/solr/FileCollection/dataimport?command=full-import");
                 $file = file_get_contents($url."&start=".$start."&rows=".$rows);
                 eval("\$result = " . $file . ";");
@@ -111,13 +113,15 @@ class FileController extends Controller
                 
 
                 if($result["response"]["numFound"]==0){
-                    $rien="<div id='div1'><p class='cntr'><i class='icon-frown'></i>Aucun resultat trouvé</p></div1>";
+                    $rien="<div id='div1'><p class='cntr'><i class='far fa-frown'></i> Aucun résultat trouvé</p></div1>";
                     return response()->json(["message"=>$rien]);
                 }
                 $title_array = array();
                 $desc_array = array();
                 $user_array = array();
                 $id_array = array();
+                $date_array = array();
+                $type_array = array();
 
                 for($i=0; $i<count($result["response"]["docs"]) ; $i++){
                     foreach($result["response"]["docs"][$i] as $k=>$v){
@@ -161,6 +165,26 @@ class FileController extends Controller
                             array_push($id_array, $id);
                             //$tbody = $tbody."<td> </td>";
                         }
+                        else if($k=="date_up"){
+                            $date_up;
+                            if(!is_array($v)){
+                                $date_up = $v;
+                            }else{
+                                $date_up = $v[0];
+                            }
+                            array_push($date_array, $date_up);
+                            //$tbody = $tbody."<td> </td>";
+                        }
+                        else if($k=="type"){
+                            $type_d;
+                            if(!is_array($v)){
+                                $type_d = $v;
+                            }else{
+                                $type_d = $v[0];
+                            }
+                            array_push($type_array, $type_d);
+                            //$tbody = $tbody."<td> </td>";
+                        }
                     }
                 }
 
@@ -171,7 +195,12 @@ class FileController extends Controller
                     $tbody = $tbody."<td>".$title_array[$i]."</td>";
                     $tbody = $tbody."<td>".$desc_array[$i]."</td>";
                     $tbody = $tbody."<td>".$user_array[$i]."</td>";
+                    $tbody = $tbody."<td>".$date_array[$i]."</td>";
                     $id = $id_array[$i];
+                    $icon = "<i class='fas fa-file-alt'></i>";
+                    if($type_array[$i]=="pdf"){
+                        $icon = "<i class='fas fa-file-pdf'></i>";
+                    }
                     $tbody = $tbody."<td  class='down'><a href='/file/$id'><i class='icon-cloud-download'></i></a></td></tr>";
                 }
                 
@@ -179,7 +208,11 @@ class FileController extends Controller
                 $res=$thead.$tbody;
                 $pagin = "<br><div class='bas'><p class='cntr'>";
                 for($i=0; $i<$numOfPages; $i++){
-                    $pagin .= "<input type='button' class='btn btn-warning'  id='search=$search&rech=$rech&page=".($i+1)."' value='".($i+1)."'>";
+                    $slt_class = "btn-secondary";
+                    if($page == ($i+1)){
+                        $slt_class = "btn-warning";
+                    }
+                    $pagin .= "<input type='button' class='btn $slt_class'  id='search=$search&rech=$rech&page=".($i+1)."' value='".($i+1)."'>";
                 }
 
                 $res .= $pagin."</p></div>";
