@@ -40,14 +40,14 @@
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Description</label>
 											<div class="controls">
-												<input type="text" name="description" placeholder="Ajouter une description à l actualité..." data-original-title="" class="span8 tip">
+											<input type="text" value="{{ old('description') }}" name="description" placeholder="Ajouter une description à l actualité..." data-original-title="" class="span8 tip">
 											</div>
 										</div>
 
 										<div class="control-group">
 											<label class="control-label" for="basicinput">Lien</label>
 											<div class="controls">
-												<input type="text" name="lien" placeholder="Ajouter le lien de l'actualité" data-original-title="" class="span8 tip">
+												<input type="text" value="{{ old('lien') }}" name="lien" placeholder="Ajouter le lien de l'actualité" data-original-title="" class="span8 tip">
 											</div>
 										</div>
 										

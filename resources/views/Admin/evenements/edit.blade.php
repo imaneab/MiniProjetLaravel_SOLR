@@ -76,8 +76,8 @@
 							<br/><br/>
 							<div class="control-group">
 								<div class="controls">
-									<button type="submit" name="add" class="btn-success">Modifier</button>
-									<button type="reset" class="btn-danger">Annuler</button>
+									<button type="submit" name="add" class="btn btn-success">Modifier</button>
+									<button type="reset" class="btn btn-danger">Annuler</button>
 								</div>
 							</div>
 						</form>

@@ -46,7 +46,7 @@
 
             <div class="module">
                 <div class="module-head">
-                    <h4>La table des Evénements</h4>
+                    <h3>La table des Evénements</h>
                 </div>
 
                 {{-- affichage des Messages --}}
@@ -67,7 +67,7 @@
                 <div class="module-body table">
                 <div class="col-sm-4">
                     <a href="{{ route('evenements.create') }}">
-                        <button type="button" class="btn btn-info add-new" style="margin-left: 73%;"><i class="fa fa-plus"></i>Ajouter un nouveau événement</button>
+                        <button type="button" class="btn btn-info add-new btn-large" style="margin-left: 67%;"><i class="fa fa-plus"></i>Ajouter un nouveau événement</button>
                     </a>
                 </div>
                 <br/>

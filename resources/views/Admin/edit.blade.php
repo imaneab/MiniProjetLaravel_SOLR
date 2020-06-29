@@ -37,21 +37,21 @@
                                         <br/>
 
 										<div class="control-group">
-											<label class="control-label" for="basicinput">Description</label>
+											<label class="control-label" for="description">Description</label>
 											<div class="controls">
-												<input type="text" name="description" value="{{ $actualites->description }}" placeholder="Ajouter une description à l actualité..." data-original-title="" class="span8 tip">
+												<input type="text" id="description" name="description" value="{{ old('description', $actualites->description) }}" placeholder="Ajouter une description à l actualité..." data-original-title="" class="span8 tip">
 											</div>
 										</div>
 										<div class="control-group">
-											<label class="control-label" for="basicinput">Lien</label>
+											<label class="control-label" for="lien">Lien</label>
 											<div class="controls">
-												<input type="text" name="lien" value="{{ $actualites->lien }}" placeholder="Ajouter le lien d l actualité..." data-original-title="" class="span8 tip">
+												<input type="text" id="lien" name="lien" value="{{ old('lien', $actualites->lien) }}" placeholder="Ajouter le lien d l actualité..." data-original-title="" class="span8 tip">
 											</div>
 										</div>
                                         <div class="control-group">
-											<label class="control-label" for="basicinput">Choisir une photo</label>
+											<label class="control-label" for="image_path">Choisir une photo</label>
 											<div class="controls">
-												<input type="file" name="image_path" value="{{ $actualites->image_path }}" data-original-title="" class="span8 tip">
+												<input type="file" id="image_path" name="image_path" value="{{ $actualites->image_path }}" data-original-title="" class="span8 tip">
 											    <img src="{{ URL::to('/') }}/image_path/{{ $actualites->image_path }}" class="img-thumbnail" width="100" />
 		                                    	<input type="hidden" name="hidden_image" value="{{ $actualites->image_path }}" />
                                             </div>
@@ -60,8 +60,8 @@
                                          <br/><br/>
 										<div class="control-group">
 											<div class="controls">
-												<button type="submit" name="add" class="btn-success">Modifier</button>
-                                                <button type="reset" class="btn-danger">Annuler</button>
+												<button type="submit" name="add" class="btn btn-success">Modifier</button>
+                                                <button type="reset" class="btn btn-danger">Annuler</button>
 											</div>
 										</div>
 									</form>

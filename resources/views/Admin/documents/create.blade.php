@@ -35,7 +35,7 @@
                     <div class="control-group">
                             <label class="control-label" for="basicinput">Titre </label>
                             <div class="controls">
-                                <input type="text" name="title" id="basicinput" placeholder="Type the title here..." class="span8">
+                            <input type="text" value="{{ old('title')}}" name="title" id="basicinput" placeholder="Type the title here..." class="span8">
                             </div>
                         </div>
 
@@ -49,7 +49,7 @@
                         <div class="control-group">
                             <label class="control-label" for="basicinput">Description </label>
                             <div class="controls">
-                                <textarea class="span8" rows="5" name="description"></textarea>
+                                <textarea class="span8" rows="5" name="description">value="{{ old('description')}}"</textarea>
                             </div>
                         </div>
 

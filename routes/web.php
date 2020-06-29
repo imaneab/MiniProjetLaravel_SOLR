@@ -32,21 +32,21 @@ Route::view('/connexion', 'User.login')->name('connexion');
 
 //Route::get('main/index_actualites', 'ActualiteController@indexActualite');
 
-Route::get('/courses', function () {
-    return view('courses');
-});
+// Route::get('/courses', function () {
+//     return view('courses');
+// });
 
-Route::get('/elements', function () {
-    return view('elements');
-});
+// Route::get('/elements', function () {
+//     return view('elements');
+// });
 
-Route::get('/news', function () {
-    return view('news');
-});
+// Route::get('/news', function () {
+//     return view('news');
+// });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
 
 // Route::get('/connexion', function () {
 //     return view('User.login');
@@ -73,6 +73,8 @@ Route::post('/user/checklogin', 'UserController@checklogin');
 Route::get('user/successlogin', 'UserController@successlogin');
 */
 Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
+Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');
+Route::get('/listAllFiles/{file}/downloadFile', 'FileController@download')->name('listAllFiles.downloadFile');
 
 //user
 

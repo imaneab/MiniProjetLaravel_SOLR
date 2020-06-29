@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Actualite;
+use App\AdminInfos;
 use App\Document;
 use App\Evenement;
+use App\File;
+use App\User;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
@@ -59,12 +62,29 @@ class MainController extends Controller
 
     function successlogin()
     {
-     return view('Admin.successlogin');
+        $infos = new AdminInfos();
+
+        $infos->nb_users = User::where('is_admin', false)->count();
+        $infos->nb_actualites_admin = Actualite::count();
+        $infos->nb_evenements_admin = Evenement::count();
+        $infos->nb_documents_admin = Document::count();
+        $infos->nb_documents_user = File::count();
+        
+        $avril = File::whereMonth('created_at', '=', '4')->count();
+        $mai = File::whereMonth('created_at', '=', '5')->count();
+        $juin = File::whereMonth('created_at', '=', '6')->count();
+        $infos->poucentage_doc_avril = number_format(($avril * 100) / $infos->nb_documents_user, 2);
+        $infos->poucentage_doc_mai = number_format(($mai * 100) / $infos->nb_documents_user, 2);
+        $infos->poucentage_doc_juin = number_format(($juin * 100) / $infos->nb_documents_user, 2);
+
+        return view('Admin.successlogin', [
+            'infos' => $infos
+        ]);
     }
 
     function create()
     {
-     return view('Admin.create');
+        return view('Admin.create');
     }
 
     function logout()

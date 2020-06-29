@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
+	<path style="fill:#A2B4C3" d="M112,136h256v64H112V136z" data-original="#78B9EB" class="active-path" data-old_color="#78B9EB"/>
+	<path style="fill:#A2B4C3" d="M112,232h64v64h-64V232z" data-original="#78B9EB" class="active-path" data-old_color="#78B9EB"/>
+	<path style="fill:#A2B4C3" d="M208,232h64v64h-64V232z" data-original="#78B9EB" class="active-path" data-old_color="#78B9EB"/>
+	<path style="fill:#A2B4C3" d="M344,8v64c0,8.837,7.163,16,16,16h56v-8L344,8z" data-original="#78B9EB" class="active-path" data-old_color="#78B9EB"/>
+</g><g>
+	<path style="fill:#29B7D3" d="M416.992,69.816l-62.64-62.768c-4.513-4.497-10.62-7.03-16.992-7.048H80C66.745,0,56,10.745,56,24   v432c0,13.255,10.745,24,24,24h320c13.255,0,24-10.745,24-24V86.768C424.014,80.41,421.492,74.308,416.992,69.816z M408,456   c0,4.418-3.582,8-8,8H80c-4.418,0-8-3.582-8-8V24c0-4.418,3.582-8,8-8h256v56c0,13.255,10.745,24,24,24h32V80h-32   c-4.418,0-8-3.582-8-8V27.344l53.664,53.768c1.497,1.501,2.338,3.536,2.336,5.656V456z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M104,48h16v16h-16V48z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M136,48h160v16H136V48z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M104,80h192v16H104V80z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M368,128H112c-4.418,0-8,3.582-8,8v64c0,4.418,3.582,8,8,8h256c4.418,0,8-3.582,8-8v-64   C376,131.582,372.418,128,368,128z M360,192H120v-48h240V192z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M176,224h-64c-4.418,0-8,3.582-8,8v64c0,4.418,3.582,8,8,8h64c4.418,0,8-3.582,8-8v-64   C184,227.582,180.418,224,176,224z M168,288h-48v-48h48V288z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M272,224h-64c-4.418,0-8,3.582-8,8v64c0,4.418,3.582,8,8,8h64c4.418,0,8-3.582,8-8v-64   C280,227.582,276.418,224,272,224z M264,288h-48v-48h48V288z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M368,224h-64c-4.418,0-8,3.582-8,8v64c0,4.418,3.582,8,8,8h64c4.418,0,8-3.582,8-8v-64   C376,227.582,372.418,224,368,224z M360,288h-48v-48h48V288z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M104,320h16v16h-16V320z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M136,320h48v16h-48V320z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M200,320h48v16h-48V320z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M264,320h16v16h-16V320z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M296,320h16v16h-16V320z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M328,320h48v16h-48V320z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M104,352h80v16h-80V352z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M200,352h80v16h-80V352z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M296,352h80v16h-80V352z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M104,384h80v16h-80V384z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M200,384h80v16h-80V384z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M296,384h80v16h-80V384z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M104,416h80v16h-80V416z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M200,416h80v16h-80V416z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+	<path style="fill:#29B7D3" d="M296,416h80v16h-80V416z" data-original="#1E81CE" class="" data-old_color="#1E81CE"/>
+</g></g> </svg>

@@ -37,14 +37,14 @@
 							<div class="control-group">
 								<label class="control-label" for="title">Titre</label>
 								<div class="controls">
-									<input type="text" name="title" value="{{ $document->title }}" placeholder="Ajouter un titre au document..." data-original-title="" class="span8 tip">
+									<input type="text" name="title" value="{{ old('title', $document->title) }}" placeholder="Ajouter un titre au document..." data-original-title="" class="span8 tip">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="description">Description</label>
 								<div class="controls">
-									<textarea class="span8" rows="5" name="description" placeholder="Ajouter une description au document..." data-original-title="" class="span8 tip">{{ $document->description }}</textarea>				
+									<textarea class="span8" rows="5" name="description" placeholder="Ajouter une description au document..." data-original-title="" class="span8 tip">{{ old('title', $document->description) }}</textarea>				
 								</div>
 							</div>
 						
@@ -52,8 +52,8 @@
 							<br/><br/>
 							<div class="control-group">
 								<div class="controls">
-									<button type="submit" name="add" class="btn-success">Modifier</button>
-									<button type="reset" class="btn-danger">Annuler</button>
+									<button type="submit" name="add" class="btn btn-success">Modifier</button>
+									<button type="reset" class="btn btn-danger">Annuler</button>
 								</div>
 							</div>
 						</form>

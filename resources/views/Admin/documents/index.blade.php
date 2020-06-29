@@ -67,7 +67,7 @@
                 <div class="module-body table">
                 <div class="col-sm-4">
                 <a href="{{ route('documents.create') }}">
-                <button type="button" class="btn btn-info add-new" style="margin-left: 73%;"><i class="fa fa-plus"></i>Ajouter un nouveau document</button>
+                <button type="button" class="btn btn-info add-new btn-large" style="margin-left: 68%;"><i class="fa fa-plus"></i>Ajouter un nouveau document</button>
                 </a>
                 </div>
                 <br/>

@@ -379,6 +379,7 @@
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
 									<div class="event_name"><a class="trans_200" href="#">{{ $evenement->title }}</a></div>
+									<div class="event_location">{{ $evenement->lieu }}</div>
 									<p>{{ $evenement->description }}</p>
 								</div>
 							</div>

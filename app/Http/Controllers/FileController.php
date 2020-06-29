@@ -7,8 +7,7 @@ use App\File;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -67,5 +66,25 @@ class FileController extends Controller
 
         return view('Admin.listFiles', ['files' => $files]);
 
+    }
+
+    public function download($id)
+    {        
+        
+        $document = File::findOrFail($id);
+        
+        //Storage::delete(public_path('admin_documents' ));
+        return Storage::download($document->path_file);
+
+    }
+    
+    public function destroy($id)
+    {        
+        $file = File::findOrFail($id);
+        
+        Storage::delete($file->path_file);
+        $file->delete();
+        
+        return redirect()->route('listAllFiles')->with('danger', 'le document est supprimé !!');
     }
 }
