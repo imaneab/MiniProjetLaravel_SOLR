@@ -5,6 +5,19 @@
 
 - Installer la dernière version du composer
 
+## Etapes pour démarer Apache Solr
+
+Après le clone du Solr (https://github.com/Mohamed-Z/Search_Engine_Solr.git) :
+
+- Démarrer Solr :
+
+    + Naviguez jusqu'au dossier bin dans le répertoire d'accueil de Solr 
+    
+    + Ouvrir la fenêtre PowerShell
+    
+    + Démarrez Solr en utilisant la commande suivante
+        >> .\solr start
+
 ## Etapes pour démarrer le projet
 
 Après le clone du projet :
