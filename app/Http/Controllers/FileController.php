@@ -70,16 +70,7 @@ class FileController extends Controller
         return view('Admin.listFiles', ['files' => $files]);
 
     }
-
-    public function download($id)
-    {        
-        
-        $document = File::findOrFail($id);
-        
-        //Storage::delete(public_path('admin_documents' ));
-        return Storage::download($document->path_file);
-
-    }
+    
     
     public function destroy($id)
     {        
@@ -89,8 +80,9 @@ class FileController extends Controller
         $file->delete();
         
         return redirect()->route('listAllFiles')->with('danger', 'le document est supprimé !!');
+    }
 
-    function rechercher(){
+    public function rechercher(){
         $doImport = file_get_contents("http://localhost:8983/solr/FileCollection/dataimport?command=full-import");
         return view('User.rechercher');
     }
@@ -242,6 +234,14 @@ class FileController extends Controller
         }
     }
 
+    public function download($id)
+    {        
+        
+        $document = File::findOrFail($id);
+        
+        return Storage::download('upload/'. $document->name);
+
+    }
    
     /*public function download($id)
     {
@@ -260,7 +260,8 @@ class FileController extends Controller
 
         return response()->download($myFile, $file);
         //return response()->download(storage_path("app/public/{$filename}"));
-        */
+    }*/
+        
 
-    }
+    
 }

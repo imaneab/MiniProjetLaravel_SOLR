@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
         <title>Acceuil - Admin</title>
         <link type="text/css" href="<?php echo url('/'); ?>/bootstrap_assets/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/bootstrap_assets/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link rel="icon" type="image/jpg" href="<?php echo url('/'); ?>/images/logoEnsa.jpg" style="width: 100px;height: 100px;" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/landing_page/ensa_logo.png" style="width: 200px;height: 200px;" />
         <link type="text/css" href="<?php echo url('/'); ?>/css/theme.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/css/style_search.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/images/icons//css/font-awesome.css" rel="stylesheet">
@@ -58,7 +58,7 @@
                                 <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>Gestion des actualités </a>
                                 </li>
                                 <li><a href="/ajouterFichier"><i class="menu-icon icon-paste"></i>Ajouter un fichier </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
+                                <li><a href="{{ route('rechercher') }}"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
                                 <li><a href="/listFichier/{{Auth::user()->id}}"><i class="menu-icon icon-tasks"></i>Liste de mes fichiers</a></li>
                             </ul>
 

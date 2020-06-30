@@ -1,28 +1,5 @@
 @extends('Admin.Layout')
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<style type="text/css">
-    table.table td a.edit {
-        color: #FFC107;
-    }
-    table.table td a.delete {
-        color: #E34724;
-    }
-    table.table th:last-child {
-        width: 100px;
-    }
-    table.table td a {
-		cursor: pointer;
-        display: inline-block;
-        margin: 0 5px;
-		min-width: 24px;
-    }    
-    table.table td a.add {
-        color: #27C46B;
-    }
-  
-    
-</style>
 
 
 @section('main')
@@ -82,22 +59,22 @@
                                     <td>
                                         {{ $file->created_at }}
                                     </td>
-                                    <td class="text-center">
-                                        <a href="{{ route('listAllFiles.downloadFile',$file->id) }}" style=" margin-left: 30%;width: 40%; height: 40%;" data-toggle="tooltip">
-                                            <img src="/images/icons/mes_icones/download_user.svg" >
+                                    <td style="width: 25px;" >
+                                        <a href="{{ route('listAllFiles.downloadFile',$file->id) }}" style=" margin-left: 15%; padding: 0%">
+                                            <img src="/images/icons/mes_icones/download_user.svg" style="width: 60%;">
                                         </a>
                                     </td>
-                                    <td>
+                                    <td style="width: 25px; padding-top: 2%;">
                                 
                                         <form style="margin-top:14%;" action="{{ route('listAllFiles.destroy',$file->id) }}" method="POST">
 
                                             @csrf
                                             @method('DELETE')
 
-                                            <button style=" display:inline; border:0px;background-color: Transparent;margin-top:-14px">
+                                            <button style=" border:0px;background-color: Transparent;margin-top:-14px;">
                                                 
-                                                <a style="width: 40%; height: 40%;" data-toggle="tooltip" type="submit">
-                                                    <img src="/images/icons/mes_icones/delete_user.svg" >
+                                                <a style="" data-toggle="tooltip" type="submit">
+                                                    <img src="/images/icons/mes_icones/delete_user.svg" style="width: 60%;">
                                                 </a>
                                             </button>
                                             

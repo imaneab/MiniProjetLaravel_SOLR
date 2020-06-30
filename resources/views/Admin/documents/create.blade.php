@@ -49,7 +49,7 @@
                         <div class="control-group">
                             <label class="control-label" for="basicinput">Description </label>
                             <div class="controls">
-                                <textarea class="span8" rows="5" name="description">value="{{ old('description')}}"</textarea>
+                                <textarea class="span8" rows="5" name="description">{{ old('description')}}</textarea>
                             </div>
                         </div>
 
