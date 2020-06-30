@@ -53,6 +53,8 @@ Route::view('/connexion', 'User.login')->name('connexion');
 // });
 
 //admin
+
+Route::get('/index_download/{id}','MainController@download')->name('download');
 Route::get('/main','MainController@indexAdmin')->name('main');
 Route::post('/main/checklogin', 'MainController@checklogin');
 
@@ -71,11 +73,6 @@ Route::get('/edit', 'MainController@edit');
 Route::get('main/logout', 'MainController@logout');
 Route::get('/main/listAllFiles', 'FileController@listAllFiles');
 */
-Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
-
-Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');
-Route::get('/listAllFiles/{file}/downloadFile', 'FileController@download')->name('listAllFiles.downloadFile');
-
 
 //user
 /*
@@ -85,9 +82,13 @@ Route::get('user/successlogin', 'UserController@successlogin');
 Route::get('/ajouterFichier', 'FileController@ajouterFichierPage');
 Route::post('/ajouterFichier', 'FileController@saveFile')->name('saveFile');
 Route::get('/listFichier/{id}', 'FileController@listFichier');
-Route::get('/rechercher', 'FileController@rechercher');
 
+Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
+Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');
+Route::get('/listAllFiles/{file}/downloadFile', 'FileController@download')->name('listAllFiles.downloadFile');
 
+//Route::get('/file/{id}', "FileController@download");
+
+Route::get('/rechercher', 'FileController@rechercher')->name('rechercher');
 Route::post('/engine' ,'FileController@ajaxRecherche')->name('engine');
 
-Route::get('/file/{id}', "FileController@download");

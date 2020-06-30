@@ -33,7 +33,7 @@ class UsersTablesSeeder extends Seeder
             ],
             [
                 'name'    => 'Abdennour Assia',
-                'email'    => 'assia2@gmail.com',
+                'email'    => 'hind@gmail.com',
                 'password'   =>  Hash::make('password'),
                 'remember_token' =>  str_random(10),
             ],
@@ -43,6 +43,12 @@ class UsersTablesSeeder extends Seeder
                 'password'   =>  Hash::make('password'),
                 'remember_token' =>  str_random(10),
             ],
+            [
+                'name'    => 'Khalis Zineb',
+                'email'    => 'khalis.zineb0@gmail.com',
+                'password'   =>  Hash::make('password'),
+                'remember_token' =>  str_random(10),
+            ]
         ];
 
         foreach($users as $user){

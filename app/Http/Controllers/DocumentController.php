@@ -55,7 +55,10 @@ class DocumentController extends Controller
         $form_data = [
             'title' => $request->title,
             'description' => $request->description,
-            'path' => $filename
+            'path' => $filename,
+            'user_id' => 1,
+            'name' => $filename,
+            'type' => $request->file('path')->getClientOriginalExtension()
         ];
 
         Document::create($form_data);

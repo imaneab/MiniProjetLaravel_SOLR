@@ -8,7 +8,7 @@
         <title>Acceuil - Admin</title>
         <link type="text/css" href="<?php echo url('/'); ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link rel="icon" type="image/jpg" href="<?php echo url('/'); ?>/images/logoEnsa.jpg" style="width: 100px;height: 100px;" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/landing_page/ensa_logo.png" style="width: 200px;height: 200px;" />
         <link type="text/css" href="<?php echo url('/'); ?>/css/theme.css" rel="stylesheet">
         <link type="text/css" href="<?php echo url('/'); ?>/images/icons//css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'

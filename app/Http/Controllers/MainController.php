@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class MainController extends Controller
 {
@@ -26,6 +27,15 @@ class MainController extends Controller
             'documents' => $documents,            
             'evenements' => $evenements
         ]);
+    }
+
+    public function download($id)
+    {
+        
+        $document = Document::findOrFail($id);
+        
+        return Storage::download('admin_documents/'. $document->path);
+
     }
 
     function indexAdmin()
@@ -73,9 +83,18 @@ class MainController extends Controller
         $avril = File::whereMonth('created_at', '=', '4')->count();
         $mai = File::whereMonth('created_at', '=', '5')->count();
         $juin = File::whereMonth('created_at', '=', '6')->count();
-        $infos->poucentage_doc_avril = number_format(($avril * 100) / $infos->nb_documents_user, 2);
-        $infos->poucentage_doc_mai = number_format(($mai * 100) / $infos->nb_documents_user, 2);
-        $infos->poucentage_doc_juin = number_format(($juin * 100) / $infos->nb_documents_user, 2);
+
+        if($infos->nb_documents_user != 0){
+                
+            $infos->poucentage_doc_avril = number_format(($avril * 100) / $infos->nb_documents_user, 2);
+            $infos->poucentage_doc_mai = number_format(($mai * 100) / $infos->nb_documents_user, 2);
+            $infos->poucentage_doc_juin = number_format(($juin * 100) / $infos->nb_documents_user, 2);
+        
+        } else {
+            $infos->poucentage_doc_avril = 0;
+            $infos->poucentage_doc_mai = 0;
+            $infos->poucentage_doc_juin = 0;
+        }
 
         return view('Admin.successlogin', [
             'infos' => $infos

@@ -212,7 +212,7 @@
 
 				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
 					<div class="icon_container d-flex flex-column justify-content-end">
-						<a href="{{ route('documents.download',$document->id) }}" class="icon_container d-flex flex-column justify-content-end" style="margin: 0">							
+						<a href="{{ route('download',$document->id) }}" class="icon_container d-flex flex-column justify-content-end" style="margin: 0">							
 							<img src="images/icons/mes_icones/download{{rand(1,10)}}.svg"  alt="Download">
 						</a>
 						
