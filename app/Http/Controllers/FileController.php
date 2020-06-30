@@ -7,7 +7,8 @@ use App\File;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
+
+
 
 class FileController extends Controller
 {
@@ -70,19 +71,8 @@ class FileController extends Controller
         return view('Admin.listFiles', ['files' => $files]);
 
     }
-    
-    
-    public function destroy($id)
-    {        
-        $file = File::findOrFail($id);
-        
-        Storage::delete($file->path_file);
-        $file->delete();
-        
-        return redirect()->route('listAllFiles')->with('danger', 'le document est supprimé !!');
-    }
 
-    public function rechercher(){
+    function rechercher(){
         $doImport = file_get_contents("http://localhost:8983/solr/FileCollection/dataimport?command=full-import");
         return view('User.rechercher');
     }
@@ -204,14 +194,21 @@ class FileController extends Controller
                     $tbody = $tbody."<tr><td>".($i+$start+1)."</td>";
                     $tbody = $tbody."<td>".$title_array[$i]."</td>";
                     $tbody = $tbody."<td>".$desc_array[$i]."</td>";
-                    $tbody = $tbody."<td>".$user_array[$i]."</td>";
-                    $tbody = $tbody."<td>".$date_array[$i]."</td>";
-                    $id = $id_array[$i];
-                    $icon = "<i class='fas fa-file-alt'></i>";
-                    if($type_array[$i]=="pdf"){
-                        $icon = "<i class='fas fa-file-pdf'></i>";
+
+                    $name_user = $user_array[$i];
+                    if($name_user == "0"){
+                        $name_user = "<input class='btn btn-primary' type='button' value='Admin'>";
+                        $tbody = $tbody."<td>".$name_user."</td>";
+                        $tbody = $tbody."<td>".$date_array[$i]."</td>";
+                        $code = $id_array[$i];
+                        $tbody = $tbody."<td  class='down'><a href='/documentDown/$code'><i class='icon-cloud-download'></i></a></td></tr>";
                     }
-                    $tbody = $tbody."<td  class='down'><a href='/file/$id'><i class='icon-cloud-download'></i></a></td></tr>";
+                    else{
+                        $tbody = $tbody."<td>".$name_user."</td>";
+                        $tbody = $tbody."<td>".$date_array[$i]."</td>";
+                        $id = $id_array[$i];
+                        $tbody = $tbody."<td  class='down'><a href='/file/$id'><i class='icon-cloud-download'></i></a></td></tr>";
+                    } 
                 }
                 
                 $tbody = $tbody."</tbody></table>";
@@ -234,16 +231,8 @@ class FileController extends Controller
         }
     }
 
-    public function download($id)
-    {        
-        
-        $document = File::findOrFail($id);
-        
-        return Storage::download('upload/'. $document->name);
-
-    }
    
-    /*public function download($id)
+    public function download($id)
     {
         $document = File::findOrFail($id);
 
@@ -260,8 +249,5 @@ class FileController extends Controller
 
         return response()->download($myFile, $file);
         //return response()->download(storage_path("app/public/{$filename}"));
-    }*/
-        
-
-    
+    }
 }

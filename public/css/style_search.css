@@ -57,3 +57,16 @@ div.bas{
     font-size: 20px;
     color: green;
 }
+
+div.basd{
+    position: absolute;
+    bottom:70px;
+    left:50px;
+    right:50px;
+}
+
+a.del{
+    font-size: 20px;
+    color: red;
+    margin-left: 20px;
+}
