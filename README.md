@@ -9,14 +9,12 @@
 
 Après le clone du Solr (https://github.com/Mohamed-Z/Search_Engine_Solr.git) :
 
-- Démarrer Solr :
-
-    + Naviguez jusqu'au dossier bin dans le répertoire d'accueil de Solr 
+-Naviguez jusqu'au dossier bin dans le répertoire d'accueil de Solr 
     
-    + Ouvrir la fenêtre PowerShell
+-Ouvrir la fenêtre PowerShell
     
-    + Démarrez Solr en utilisant la commande suivante
-        >> .\solr start
+-Démarrez Solr en utilisant la commande suivante
+    >> .\solr start
 
 ## Etapes pour démarrer le projet
 
