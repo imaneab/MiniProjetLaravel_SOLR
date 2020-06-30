@@ -6,7 +6,7 @@
 	<div class="content">
 
 		<div class="module">
-			<h1 style="margin-left: 25%; margin-top:2%; color: #E34724" >Gestion des documents</h2>
+			<h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des Documents</h2>
 			<div class="module-body">
 
 			<div class="module">
@@ -25,7 +25,7 @@
 				</div>
 				@endif
 				<div align="right">
-					<a href="{{ route('documents.index') }}">Retour</a>
+					<a style="text-decoration:underline; font-size: 15px; margin-right: 5%; " href="{{ route('documents.index') }}">Retour</a>
 				</div>
 
 						<form method="post" action="{{ route('documents.update', $document->id) }}" enctype="multipart/form-data" class="form-horizontal row-fluid" >
@@ -37,14 +37,14 @@
 							<div class="control-group">
 								<label class="control-label" for="title">Titre</label>
 								<div class="controls">
-									<input type="text" name="title" value="{{ $document->title }}" placeholder="Ajouter un titre au document..." data-original-title="" class="span8 tip">
+									<input type="text" name="title" value="{{ old('title', $document->title) }}" placeholder="Ajouter un titre au document..." data-original-title="" class="span8 tip">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="description">Description</label>
 								<div class="controls">
-									<textarea class="span8" rows="5" name="description" placeholder="Ajouter une description au document..." data-original-title="" class="span8 tip">{{ $document->description }}</textarea>				
+									<textarea class="span8" rows="5" name="description" placeholder="Ajouter une description au document..." data-original-title="" class="span8 tip">{{ old('title', $document->description) }}</textarea>				
 								</div>
 							</div>
 						
@@ -52,8 +52,8 @@
 							<br/><br/>
 							<div class="control-group">
 								<div class="controls">
-									<button type="submit" name="add" class="btn-success">Modifier</button>
-									<button type="reset" class="btn-danger">Annuler</button>
+									<button type="submit" name="add" class="btn btn-success">Modifier</button>
+									<button type="reset" class="btn btn-danger">Annuler</button>
 								</div>
 							</div>
 						</form>

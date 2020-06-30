@@ -48,7 +48,8 @@ class ActualiteController extends Controller
         //
         $request->validate([
             'description'        => 'required',
-            'image_path'         =>  'required|image|max:2048'
+            'image_path'         =>  'required|image|max:2048',
+            'lien'  => 'required'
         ]);
 
         $image = $request->file('image_path');
@@ -57,7 +58,8 @@ class ActualiteController extends Controller
         $image->move(public_path('image_path'), $new_name);
         $form_data = array(
             'description'        =>   $request->description,
-            'image_path'            =>   $new_name
+            'image_path'            =>   $new_name,
+            'lien'    => $request->lien
         );
 
         Actualite::create($form_data);
@@ -107,7 +109,8 @@ class ActualiteController extends Controller
         {
             $request->validate([
                 'description'    =>  'required',
-                'image_path'     =>  'required'
+                'image_path'     =>  'required',
+                'lien'  => 'required'
                 
             ]);
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
@@ -123,7 +126,8 @@ class ActualiteController extends Controller
 
         $form_data = array(
             'description'    =>  $request->description,
-            'image_path'         =>  $image_name
+            'image_path'         =>  $image_name,
+            'lien'  =>  $request->lien,
         );
 
         Actualite::whereId($id)->update($form_data);

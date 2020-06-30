@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/actualites','ActualiteController');
 
 Route::resource('/documents', "DocumentController");
-
 Route::get('/documents/{document}/download', "DocumentController@download")->name('documents.download');
+
+Route::resource('/evenements', "EvenementController");
 
 //Route::get('/', 'ActualiteController@home_index');
 Route::get('/', 'MainController@index')->name('home');
@@ -31,21 +32,21 @@ Route::view('/connexion', 'User.login')->name('connexion');
 
 //Route::get('main/index_actualites', 'ActualiteController@indexActualite');
 
-Route::get('/courses', function () {
-    return view('courses');
-});
+// Route::get('/courses', function () {
+//     return view('courses');
+// });
 
-Route::get('/elements', function () {
-    return view('elements');
-});
+// Route::get('/elements', function () {
+//     return view('elements');
+// });
 
-Route::get('/news', function () {
-    return view('news');
-});
+// Route::get('/news', function () {
+//     return view('news');
+// });
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
 
 // Route::get('/connexion', function () {
 //     return view('User.login');
@@ -71,6 +72,11 @@ Route::get('main/logout', 'MainController@logout');
 Route::get('/main/listAllFiles', 'FileController@listAllFiles');
 */
 Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
+
+Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');
+Route::get('/listAllFiles/{file}/downloadFile', 'FileController@download')->name('listAllFiles.downloadFile');
+
+
 //user
 /*
 Route::post('/user/checklogin', 'UserController@checklogin');

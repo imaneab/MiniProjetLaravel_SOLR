@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
+	<path style="fill:#19D2A0" d="M379.586,70.621H61.793c-9.739,0.029-17.627,7.916-17.655,17.655v406.069   c0.029,9.739,7.916,17.627,17.655,17.655H256l123.586-123.586V70.621z" data-original="#CBB292" class="" data-old_color="#CBB292"/>
+	<path style="fill:#00AF80" d="M256,512V406.069c0-9.751,7.904-17.655,17.655-17.655h105.931L256,512z" data-original="#7F6E5D" class="" data-old_color="#7F6E5D"/>
+	<g>
+		<path style="fill:#FCFEFF" d="M97.103,256H256c4.875,0,8.828-3.952,8.828-8.828s-3.952-8.828-8.828-8.828H97.103    c-4.875,0-8.828,3.952-8.828,8.828S92.228,256,97.103,256z" data-original="#E6E7E8" class="active-path" data-old_color="#E6E7E8"/>
+		<path style="fill:#FCFEFF" d="M264.828,282.483H97.103c-4.875,0-8.828,3.952-8.828,8.828s3.952,8.828,8.828,8.828h167.724    c4.875,0,8.828-3.952,8.828-8.828S269.703,282.483,264.828,282.483z" data-original="#E6E7E8" class="active-path" data-old_color="#E6E7E8"/>
+		<path style="fill:#FCFEFF" d="M264.828,326.621H97.103c-4.875,0-8.828,3.952-8.828,8.828s3.952,8.828,8.828,8.828h167.724    c4.875,0,8.828-3.952,8.828-8.828S269.703,326.621,264.828,326.621z" data-original="#E6E7E8" class="active-path" data-old_color="#E6E7E8"/>
+		<path style="fill:#FCFEFF" d="M211.862,370.759H97.103c-4.875,0-8.828,3.952-8.828,8.828s3.952,8.828,8.828,8.828h114.759    c4.875,0,8.828-3.952,8.828-8.828S216.737,370.759,211.862,370.759z" data-original="#E6E7E8" class="active-path" data-old_color="#E6E7E8"/>
+		<path style="fill:#FCFEFF" d="M211.862,414.897H97.103c-4.875,0-8.828,3.952-8.828,8.828c0,4.875,3.952,8.828,8.828,8.828    h114.759c4.875,0,8.828-3.952,8.828-8.828C220.69,418.849,216.737,414.897,211.862,414.897z" data-original="#E6E7E8" class="active-path" data-old_color="#E6E7E8"/>
+	</g>
+	<path style="fill:#E84849" d="M361.931,291.31l105.931-88.276h-44.138V17.655C423.724,7.904,415.82,0,406.069,0h-88.276   c-9.751,0-17.655,7.904-17.655,17.655v185.379H256L361.931,291.31z" data-original="#CC4B4C" class="" data-old_color="#CC4B4C"/>
+</g></g> </svg>

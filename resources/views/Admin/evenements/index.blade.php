@@ -31,7 +31,7 @@
     <div class="content">
 
         <div class="module">
-            <h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724" >Gestion des Documents</h2>
+            <h1 style="text-decoration: underline; margin-left: 30%; margin-top:2%; color: #E34724; font-weight: bold;" >Gestion des Evénements</h1>
             <div class="module-body">
 
             @if($errors->any())
@@ -46,7 +46,7 @@
 
             <div class="module">
                 <div class="module-head">
-                    <h3>La table des documents</h3>
+                    <h3>La table des Evénements</h>
                 </div>
 
                 {{-- affichage des Messages --}}
@@ -66,40 +66,40 @@
                 
                 <div class="module-body table">
                 <div class="col-sm-4">
-                <a href="{{ route('documents.create') }}">
-                <button type="button" class="btn btn-info add-new btn-large" style="margin-left: 68%;"><i class="fa fa-plus"></i>Ajouter un nouveau document</button>
-                </a>
+                    <a href="{{ route('evenements.create') }}">
+                        <button type="button" class="btn btn-info add-new btn-large" style="margin-left: 67%;"><i class="fa fa-plus"></i>Ajouter un nouveau événement</button>
+                    </a>
                 </div>
                 <br/>
                     <table id="tab" cellpadding="0" cellspacing="0" border="0" class=" text-center datatable-1 table table-bordered table-striped display" width="100%">
                         <thead>
                             <tr>
                                 <th>N°</th>
+                                <th>Image</th>
                                 <th>Titre</th>
-                                <th>Description</th>
-                                <th>Download</th>
+                                <th class="text-center">Description</th>
+                                <th>Lieu</th>
+                                <th>Date</th>
                                 <th>Action</th>
                                 
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($documents as $row)
+                        @foreach($evenements as $row)
                             
                             <tr class="odd gradeX">
                                 <td>{{ ($loop->index + 1 )}}</td>
+                                <td><img src="{{ URL::to('/storage/admin_documents') }}/{{ $row->path_image }}" class="img-thumbnail" width="75" /></td>
                                 <td> {{ $row->title}}</td>
                                 <td>{{ $row->description }}</td>
-                                <td>
-                                    <a href="{{ route('documents.download',$row->id) }}" class="download" title="Download" data-toggle="tooltip">
-                                        <i class="icon-cloud-download p-5" style="color:#27C46B; "></i>
-                                    </a> 
-                                </td>
+                                <td>{{ $row->lieu }}</td>
+                                <td>{{ $row->date }}</td>
                             
                                 <td class="text-center">   
                                                                 
-                                    <form action="{{ route('documents.destroy',$row->id) }}" method="POST">
+                                    <form action="{{ route('evenements.destroy',$row->id) }}" method="POST">
                                        
-                                        <a href="{{ route('documents.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip">
+                                        <a href="{{ route('evenements.edit',$row->id) }}" class="edit" title="Edit" data-toggle="tooltip">
                                             <i class="material-icons">&#xE254;</i>
                                         </a>                                        
 

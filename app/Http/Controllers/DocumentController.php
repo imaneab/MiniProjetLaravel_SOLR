@@ -114,11 +114,9 @@ class DocumentController extends Controller
         
         $document = Document::findOrFail($id);
         
-        //Storage::delete(public_path('admin_documents' ));
         Storage::delete('admin_documents/' . $document->path);
         $document->delete();
         
-
         return redirect()->route('documents.index')->with('danger', 'le document est supprimé !!');
     }
 

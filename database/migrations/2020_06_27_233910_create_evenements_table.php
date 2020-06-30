@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActualitesTable extends Migration
+class CreateEvenementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateActualitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actualites', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('image_path');
-            $table->string('description');
-            $table->string('lien');
+        Schema::create('evenements', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('lieu');
+            $table->text('description');
+            $table->string('path_image');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateActualitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actualites');
+        Schema::dropIfExists('evenements');
     }
 }

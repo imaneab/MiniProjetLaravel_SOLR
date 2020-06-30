@@ -8,7 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Course Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/jpg" href="images/logoEnsa.jpg" style="width: 100px;height: 100px;" />
+{{-- <link rel="icon" type="image/jpg" href="images/logoEnsa.jpg" style="width: 100px;height: 100px;" /> --}}
+<link rel="shortcut icon" type="image/x-icon" href="images/landing_page/ensa_logo.png" style="width: 200px;height: 200px;" />
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -37,12 +38,13 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="#">Acceuil</a></li>
-						<li class="main_nav_item"><a href="#">A propos</a></li>
-						<li class="main_nav_item"><a href="courses.html">Services</a></li>
+						<li class="main_nav_item"><a href="/">Acceuil</a></li>
+						<li class="main_nav_item"><a href="#Documents">Documents</a></li>
+						<li class="main_nav_item"><a href="#Apropos">A propos</a></li>
+						<li class="main_nav_item"><a href="#Evenements">Evénements</a></li>
+						
 					<!--	<li class="main_nav_item"><a href="elements.html">elements</a></li> -->
-						<li class="main_nav_item"><a href="news.html">Actualités</a></li>
-						<li class="main_nav_item"><a href="{{ route('connexion') }}">Connexion</a></li>
+						<li class="main_nav_item"><a href="#Services">Services</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -105,6 +107,7 @@
 <div class="home">
 
 
+
 <!-- Hero Slider -->
 <div class="hero_slider_container">
 	<div class="hero_slider owl-carousel">
@@ -120,16 +123,21 @@
 			 ?>
 		<!-- Hero Slide -->
 
-		<div class="hero_slide">
+		<div class="hero_slide" id="Slides">
 		<div class="hero_slide_background <?= $actives; ?>" style="background-image:url(<?= $row['image_path']; ?>)">
 		<img src="{{ URL::to('/image_path') }}/{{ $row->image_path }}"/>
         </div>
 		<div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
 
-						<div class="hero_slide_content text-center">
-							<h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut"><?= $row['description']; ?></h1>
-						</div>
-					</div>
+			<div class="hero_slide_content text-center">
+				<h2 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">
+					<span><?= $row['description']; ?></span>
+				</h2><br><br>
+				<button data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut" type="button" class="btn btn-warning" onclick="window.location.href = '<?= $row['lien']; ?>'" style="border-radius: 0px; opacity: 0.8;">
+					Plus de détails..
+				</button>
+			</div>
+	</div>
 
 		</div>
 		<?php $i++; }?>
@@ -138,300 +146,198 @@
 	<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">prev</span></div>
 	<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">next</span></div>
 </div>
+{{-- ++++++++++++++++++++++++++++++ BOXEES +++++++++++++++++++++++++++++++++ --}}
+<div class="hero_boxes">
+	<div class="hero_boxes_inner">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-lg-4 offset-lg-2 hero_box_col">
+					<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+						<img src="images/mortarboard.svg" class="svg" alt="">
+						<div class="hero_box_content">
+							<h2 class="hero_box_title">
+								<a class="hero_box_title" href="{{ route('connexion') }}" style=" color: white;">
+									Espace Etudiant
+								</a>
+							</h2>
+							<a href="{{ route('connexion') }}" class="hero_box_link">Connexion</a>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4  hero_box_col">
+					<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+						<img src="images/earth-globe.svg" class="svg" alt="">
+						<div class="hero_box_content">
+							<h2 class="hero_box_title">
+								<a class="hero_box_title" href="http://www.ensas.uca.ma/formations.html" style=" color: white;">
+									Formations
+								</a>
+							</h2>
+							<a href="http://www.ensas.uca.ma/formations.html" class="hero_box_link">voir plus</a>
+							
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
 
 </div>
 
 
-	<div class="hero_boxes">
-		<div class="hero_boxes_inner">
-			<div class="container">
-				<div class="row">
 
-					<div class="col-lg-4 hero_box_col">
-						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/earth-globe.svg" class="svg" alt="">
-							<div class="hero_box_content">
-								<h2 class="hero_box_title">Online Courses</h2>
-								<a href="courses.html" class="hero_box_link">view more</a>
-							</div>
-						</div>
-					</div>
+	{{-- *********************************** Documents ********************************** --}}
 
-					<div class="col-lg-4 hero_box_col">
-						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/books.svg" class="svg" alt="">
-							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Library</h2>
-								<a href="courses.html" class="hero_box_link">view more</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 hero_box_col">
-						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/professor.svg" class="svg" alt="">
-							<div class="hero_box_content">
-								<h2 class="hero_box_title">Our Teachers</h2>
-								<a href="teachers.html" class="hero_box_link">view more</a>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Popular -->
-
-	<div class="popular page_section">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title text-center">
-						<h1>Popular Courses</h1>
-					</div>
-				</div>
-			</div>
-
-			<div class="row course_boxes">
-
-				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
-					<div class="card">
-						<img class="card-img-top" src="images/course_1.jpg" alt="https://unsplash.com/@kellybrito">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
-					<div class="card">
-						<img class="card-img-top" src="images/course_2.jpg" alt="https://unsplash.com/@cikstefan">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">Beginners guide to HTML</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
-					<div class="card">
-						<img class="card-img-top" src="images/course_3.jpg" alt="https://unsplash.com/@dsmacinnes">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-							<div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-							</div>
-							<div class="course_author_name">Michael Smith, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>$29</span></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Register -->
-
-	<div class="register">
-
-		<div class="container-fluid">
-
-			<div class="row row-eq-height">
-				<div class="col-lg-6 nopadding">
-
-					<!-- Register -->
-
-					<div class="register_section d-flex flex-column align-items-center justify-content-center">
-						<div class="register_content text-center">
-							<h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1 January</h1>
-							<p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
-							<div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-lg-6 nopadding">
-
-					<!-- Search -->
-
-					<div class="search_section d-flex flex-column align-items-center justify-content-center">
-						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
-						<div class="search_content text-center">
-							<h1 class="search_title">Search for your course</h1>
-							<form id="search_form" class="search_form" action="post">
-								<input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Course Name" required="required" data-error="Course name is required.">
-								<input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Category">
-								<input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="Degree">
-								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">search course</button>
-							</form>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Services -->
-
-	<div class="services page_section">
+	<div class="services page_section" id="Documents">
 
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Our Services</h1>
+						<h1>Documents Partagés par l'Administration</h1>
 					</div>
 				</div>
 			</div>
 
 			<div class="row services_row">
 
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
-					<div class="icon_container d-flex flex-column justify-content-end">
-						<img src="images/earth-globe.svg" alt="">
-					</div>
-					<h3>Online Courses</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-				</div>
+				@foreach ($documents as $document)
 
 				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
 					<div class="icon_container d-flex flex-column justify-content-end">
-						<img src="images/exam.svg" alt="">
+						<a href="{{ route('documents.download',$document->id) }}" class="icon_container d-flex flex-column justify-content-end" style="margin: 0">							
+							<img src="images/icons/mes_icones/download{{rand(1,10)}}.svg"  alt="Download">
+						</a>
+						
 					</div>
-					<h3>Indoor Courses</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+					<h3>{{ $document->title }}</h3>
+					<p>{{ $document->description }}</p>
 				</div>
+					
+				@endforeach
 
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
-					<div class="icon_container d-flex flex-column justify-content-end">
-						<img src="images/books.svg" alt="">
-					</div>
-					<h3>Amazing Library</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-				</div>
-
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
-					<div class="icon_container d-flex flex-column justify-content-end">
-						<img src="images/professor.svg" alt="">
-					</div>
-					<h3>Exceptional Professors</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-				</div>
-
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
-					<div class="icon_container d-flex flex-column justify-content-end">
-						<img src="images/blackboard.svg" alt="">
-					</div>
-					<h3>Top Programs</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-				</div>
-
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
-					<div class="icon_container d-flex flex-column justify-content-end">
-						<img src="images/mortarboard.svg" alt="">
-					</div>
-					<h3>Graduate Diploma</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-				</div>
+				
 
 			</div>
 		</div>
 	</div>
 
-	<!-- Testimonials -->
+	{{-- *********************************** A Propos ********************************** --}}
 
-	<div class="testimonials page_section">
+	<div class="testimonials page_section" id="Apropos">
 		<!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
 		<div class="testimonials_background_container prlx_parent">
-			<div class="testimonials_background prlx" style="background-image:url(images/testimonials_background.jpg)"></div>
+			<div class="testimonials_background prlx" style="background-image:url(images/landing_page/ensa.jpg)"></div>
 		</div>
 		<div class="container">
 
-			<div class="row">
+			<div class="row" style="margin-top: 0; padding-top: 0;">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>What our students say</h1>
+						<h1>A Propos de nous !</h1>
 					</div>
 				</div>
-			</div>
+			</div> 
 
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 
-					<div class="testimonials_slider_container">
+					<div class="testimonials_slider_container" style="">
 
 						<!-- Testimonials Slider -->
 						<div class="owl-carousel owl-theme testimonials_slider">
 
 							<!-- Testimonials Item -->
 							<div class="owl-item">
+								
 								<div class="testimonials_item text-center">
-									<div class="quote">“</div>
-									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+									<div class="quote" style="font-style: italic;">ENSA de Safi</div>
+									<br>
+									<p class="testimonials_text">
+
+										L'Ecole Nationale des Sciences Appliquées de SAFI (ENSA Safi) est un établissement universitaire relevant de l’université Cadi Ayyad et sous la tutelle du ministère de l’enseignement supérieur et de la recherche scientifique. Elle fait partie du réseau des écoles nationales des sciences appliquées réparties sur l’ensemble du territoire national au niveau des grandes villes universitaires du pays. L'ENSAS est spécialisée dans tout ce qui concerne l’enseignement supérieur, la recherche scientifique et technique et la formation d’ingénieurs et des cadres ainsi que la formation continue.
+											
+									</p>
+										
 									<div class="testimonial_user">
 										<div class="testimonial_image mx-auto">
-											<img src="images/testimonials_user.jpg" alt="">
+											<img src="images/landing_page/ensa0.jfif" alt="">
 										</div>
-										<div class="testimonial_name">james cooper</div>
-										<div class="testimonial_title">Graduate Student</div>
+										
 									</div>
 								</div>
 							</div>
 
 							<!-- Testimonials Item -->
 							<div class="owl-item">
-								<div class="testimonials_item text-center">
-									<div class="quote">“</div>
-									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+								
+								<div class="testimonials_item ">
+									<div class="quote text-center" style="font-style: italic;">Objectifs</div>
+									<br>
+									<p class="testimonials_text">
+										<ul class="testimonials_text" >
+											<li class="testimonials_text">
+												-&nbsp;&nbsp; La formation d’ingénieurs d’Etat sur les plans théorique et pratique en parfaite adéquation avec les besoins du développement industriel, économique et social aussi bien au niveau régional que national.
+											</li><br>
+											<li class="testimonials_text">
+												-&nbsp;&nbsp; La mise en place d’une coopération et d’un partenariat avec les opérateurs industriels, économiques et sociaux au niveau de la région et à l’échelle internationale.
+											</li><br>
+											<li class="testimonials_text">
+												-&nbsp;&nbsp; La dynamisation de la recherche scientifique et technique.
+											</li>
+										</ul>
+									</p>
+									<br>
+								
 									<div class="testimonial_user">
 										<div class="testimonial_image mx-auto">
-											<img src="images/testimonials_user.jpg" alt="">
+											<img src="images/landing_page/ensa0.jfif" alt="">
 										</div>
-										<div class="testimonial_name">james cooper</div>
-										<div class="testimonial_title">Graduate Student</div>
 									</div>
 								</div>
 							</div>
 
 							<!-- Testimonials Item -->
 							<div class="owl-item">
-								<div class="testimonials_item text-center">
-									<div class="quote">“</div>
-									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+								
+								<div class="testimonials_item  text-center ">
+									<div class="quote" style="font-style: italic;">Formation</div>
+									<br>
+									<p class="testimonials_text">
+										La formation offerte se caractérise par l’application d'un système pédagogique moderne et développé, basé sur des modules d’enseignement organisés durant des sessions semestrielles. Elle adopte également l’ouverture sur le milieu industriel et économique à travers les stages et le parrainage ainsi que l'intégration de l’enseignement des langues étrangères, les techniques d’expression et de communication
+									</p>
+									<br><br>
+								
 									<div class="testimonial_user">
 										<div class="testimonial_image mx-auto">
-											<img src="images/testimonials_user.jpg" alt="">
+											<img src="images/landing_page/ensa0.jfif" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Testimonials Item -->
+							{{-- <div class="owl-item">
+								<div class="testimonials_item text-center">
+									<div class="quote">“</div>
+									<p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum </p>
+									<div class="testimonial_user">
+										<div class="testimonial_image mx-auto">
+											<img src="images/landing_page/ensa.jpg" alt="">
 										</div>
 										<div class="testimonial_name">james cooper</div>
 										<div class="testimonial_title">Graduate Student</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
+
 
 						</div>
 
@@ -442,115 +348,164 @@
 		</div>
 	</div>
 
-	<!-- Events -->
+	{{-- *********************************** Evenement A venir ********************************** --}}
 
-	<div class="events page_section">
+	<div class="events page_section" id="Evenements">
 		<div class="container">
 
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Upcoming Events</h1>
+						<h1>Evénements à venir </h1>
 					</div>
 				</div>
 			</div>
 
 			<div class="event_items">
 
-				<!-- Event Item -->
+				@foreach ($evenements as $evenement)
+
 				<div class="row event_item">
 					<div class="col">
 						<div class="row d-flex flex-row align-items-end">
 
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">January</div>
+									<div class="event_day">{{ Carbon\Carbon::parse($evenement->date)->format('d') }}</div>
+									<div class="event_month">{{ Carbon\Carbon::parse($evenement->date)->format('F') }}</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Student Festival</a></div>
-									<div class="event_location">Grand Central Park</div>
-									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
+									<div class="event_name"><a class="trans_200" href="#">{{ $evenement->title }}</a></div>
+									<div class="event_location">{{ $evenement->lieu }}</div>
+									<p>{{ $evenement->description }}</p>
 								</div>
 							</div>
 
 							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image">
-									<img src="images/event_1.jpg" alt="https://unsplash.com/@theunsteady5">
+								<div class="event_image  text-center p-4" style="border-color: #FFB606; border-style: solid;">
+									<img src="storage/admin_documents/{{ $evenement->path_image }}" alt="Bienvenue !"  style=" width:80%; height:80%;">
 								</div>
 							</div>
 
 						</div>
 					</div>
 				</div>
-
-				<!-- Event Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">January</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Open day in the Univesrsity campus</a></div>
-									<div class="event_location">Grand Central Park</div>
-									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
-								</div>
-							</div>
-
-							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image">
-									<img src="images/event_2.jpg" alt="https://unsplash.com/@claybanks1989">
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-				<!-- Event Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">January</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Student Graduation Ceremony</a></div>
-									<div class="event_location">Grand Central Park</div>
-									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
-								</div>
-							</div>
-
-							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image">
-									<img src="images/event_3.jpg" alt="https://unsplash.com/@juanmramosjr">
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
+					
+				@endforeach
 
 			</div>
 
 		</div>
 	</div>
+
+	{{-- *********************************** Services ********************************** --}}
+
+	<div class="events page_section" id="Services" style="background-color:#ffcb51;">
+		<div class="container" >
+
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center" style="color: black">
+						<h1>Nos Services </h1>
+					</div>
+				</div>
+			</div>
+
+			<br><br><br><br><br><br><br><br>
+
+		</div>
+	</div>
+
+	{{-- !!!!!!!! BOXES !!!!!!!!!!!--}}
+	<div class="hero_boxes" >
+
+		<div class="hero_boxes_inner">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-4 hero_box_col mb-5">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/icons/mes_icones/service_prof_etudiant.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Services Professeur / Etudiant</h2>
+								
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col mb-5">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/icons/mes_icones/service_preselection.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Service de Présélection</h2>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col mb-5">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/icons/mes_icones/service_formation.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Service de Formation Continue</h2>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col mb-5">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/icons/mes_icones/service_choix_filiere.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Gestion de Choix de Filière</h2>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col mb-5">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/mortarboard.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Gestion des PFEs</h2>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4 hero_box_col mb-5">
+						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
+							<img src="images/icons/mes_icones/service_stage.svg" class="svg" alt="">
+							<div class="hero_box_content">
+								<h2 class="hero_box_title">Gestion des Stages / Mini-Prjets</h2>
+							</div>
+						</div>
+					</div>
+
+				
+
+					<br><br>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="events page_section"  style="background-color:#ffcb51">
+		<div class="container" >
+
+			<div class="row">
+				<div class="col">
+					<div class="section_title text-center">
+						<h1> </h1>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
 
 	<!-- Footer -->
 
@@ -563,7 +518,10 @@
 				<div class="row">
 					<div class="col">
 						<div class="section_title text-center">
-							<h1>Subscribe to newsletter</h1>
+							<h1>S'abonner à Newsletter</h1>
+							<p class="col-lg-4 offset-lg-4 mt-3">
+								Abonnez-vous à notre newsletter si vous voulez vous tenir informé(e) de l’actualité et événements importants organisés à l'ENSA Safi.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -573,8 +531,8 @@
 						<div class="newsletter_form_container mx-auto">
 							<form action="post">
 								<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-									<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
-									<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
+									<input id="newsletter_email" class="newsletter_email" type="email" placeholder="Adresse Email..." required="required" data-error="Valid email is required.">
+									<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">S'inscrire</button>
 								</div>
 							</form>
 						</div>
@@ -589,73 +547,76 @@
 				<div class="row">
 
 					<!-- Footer Column - About -->
-					<div class="col-lg-3 footer_col">
+					<div class="col-lg-4 footer_col">
 
 						<!-- Logo -->
 						<div class="logo_container">
 							<div class="logo">
-								<img src="images/logo.png" alt="">
-								<span>course</span>
+								<img src="images/landing_page/ensa0.jfif" width="100%" height="100%" alt="ensa">
+							
+	
 							</div>
 						</div>
 
-						<p class="footer_about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum, tempor lacus.</p>
+						
 
 					</div>
 
 					<!-- Footer Column - Menu -->
 
 					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Menu</div>
+						<div class="logo_container">
+							<div class="logo">
+								<span>ENSA de Safi</span>
+							</div>
+						</div>
+
 						<div class="footer_column_content">
-							<ul>
-								<li class="footer_list_item"><a href="#">Home</a></li>
-								<li class="footer_list_item"><a href="#">About Us</a></li>
-								<li class="footer_list_item"><a href="courses.html">Courses</a></li>
-								<li class="footer_list_item"><a href="news.html">News</a></li>
-								<li class="footer_list_item"><a href="contact.html">Contact</a></li>
-							</ul>
+							<p class="footer_about_text">
+								Université Cadi Ayyad. <br>
+								Ecole Nationale des Sciences Appliquées Safi
+							</p>
 						</div>
 					</div>
 
-					<!-- Footer Column - Usefull Links -->
 
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Usefull Links</div>
-						<div class="footer_column_content">
-							<ul>
-								<li class="footer_list_item"><a href="#">Testimonials</a></li>
-								<li class="footer_list_item"><a href="#">FAQ</a></li>
-								<li class="footer_list_item"><a href="#">Community</a></li>
-								<li class="footer_list_item"><a href="#">Campus Pictures</a></li>
-								<li class="footer_list_item"><a href="#">Tuitions</a></li>
-							</ul>
-						</div>
-					</div>
+				
 
 					<!-- Footer Column - Contact -->
 
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Contact</div>
+					<div class="col-lg-5 footer_col">
+						<div class="logo_container">
+							<div class="logo">
+								<span>Contact</span>
+							</div>
+						</div>
 						<div class="footer_column_content">
 							<ul>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="images/placeholder.svg" >
 									</div>
-									Blvd Libertad, 34 m05200 Arévalo
+									<span style="font-weight: bold;">Adresse</span> : Route Sidi Bouzid BP 63, 46000 - Safi, Maroc
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="images/icons/mes_icones/phone.svg">
 									</div>
-									0034 37483 2445 322
+									<span style="font-weight: bold;">Téléphone: </span>+212 6 56 20 00 07
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
+										<img src="images/icons/mes_icones/fax.svg">
+									</div>
+									<span style="font-weight: bold;">Fax: </span>+212 24 66 80 12
 								</li>
+								<li class="footer_contact_item">
+									<div class="footer_contact_icon">
+										<img src="images/envelope.svg">
+									</div>
+									<span style="font-weight: bold;">Email: </span>ensasafi@gmail.com
+								</li>
+								
 							</ul>
 						</div>
 					</div>
@@ -667,19 +628,11 @@
 
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
 				<div class="footer_copyright">
-					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+					<span>
+						Copyright &copy; | <script>document.write(new Date().getFullYear());</script> All rights reserved | ENSAS - Moteur de recherche - SOLR <i class="fa fa-heart" aria-hidden="true"></i>
+					</span>
 				</div>
-				<div class="footer_social ml-sm-auto">
-					<ul class="menu_social">
-						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
+				
 			</div>
 
 		</div>

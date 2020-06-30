@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Actualite extends Model
 {
     //
-    protected $fillable = ['image_path', 'description'];
+    protected $fillable = ['image_path', 'description','lien'];
 }
