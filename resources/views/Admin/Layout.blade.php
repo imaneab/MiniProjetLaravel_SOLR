@@ -65,8 +65,8 @@
                         <li><a href="{{ route('evenements.index') }}"><i class="menu-icon icon-bullhorn"></i>Gestion des Evénements </a>
                         </li>
                         <li><a href="{{ route('documents.index') }}"><i class="menu-icon icon-paste"></i>Gestion des Documents </a></li>
-                        <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de Recherche</a></li>
-                        <li><a href="{{ route('listAllFiles') }}""><i class="menu-icon icon-tasks"></i>Liste des Fichiers étudiants</a></li>
+                        <li><a href="{{ route('rechercheAdmin') }}"><i class="menu-icon icon-search"></i>Moteur de Recherche</a></li>
+                        <li><a href="{{ route('listAllFiles') }}"><i class="menu-icon icon-tasks"></i>Liste des Fichiers étudiants</a></li>
                     </ul>
 
                     <ul class="widget widget-menu unstyled" style="font-size: 16px;">

@@ -60,6 +60,9 @@ Route::post('/main/checklogin', 'MainController@checklogin');
 
 Route::get('/main/successlogin', 'MainController@successlogin')->name('successlogin');
 Route::get('/main/create', 'MainController@create');
+
+
+
 //Route::get('/edit', 'MainController@edit');
 
 //user
@@ -87,8 +90,14 @@ Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles')
 Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');
 Route::get('/listAllFiles/{file}/downloadFile', 'FileController@download')->name('listAllFiles.downloadFile');
 
-//Route::get('/file/{id}', "FileController@download");
+Route::get('/file/{id}', "FileController@download");
 
 Route::get('/rechercher', 'FileController@rechercher')->name('rechercher');
 Route::post('/engine' ,'FileController@ajaxRecherche')->name('engine');
 
+
+Route::get('/rechercheAdmin', 'DocumentController@rechercher')->name('rechercheAdmin');
+
+Route::get('/adminSearch' ,'DocumentController@adminRecherche')->name('adminSearch');
+
+Route::get('/documentDown/{code}', "DocumentController@telecharger");
