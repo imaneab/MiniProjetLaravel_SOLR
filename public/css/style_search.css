@@ -1,0 +1,59 @@
+div#espace_search{
+    background-color: rgb(228, 229, 230);
+    height: 340px;
+    border-radius: 1px;
+}
+
+div#div1{
+    
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p.cntr{
+    text-align: center;
+    color: cornflowerblue;
+    font-size: 30px;
+}
+
+p.cntr i{
+    font-size: 100px;
+}
+
+table.equl td{
+    width: 100px;
+}
+
+div.loader{
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cntr input{
+    margin:10px;
+}
+
+div.bas{
+    position: absolute;
+    bottom:10px;
+    left:0;
+    right:0;
+}
+
+.down{
+    
+    text-align: center;
+}
+
+.down a{
+    text-decoration: none;
+}
+
+.down i{
+    font-size: 20px;
+    color: green;
+}

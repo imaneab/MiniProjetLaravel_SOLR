@@ -64,7 +64,7 @@
                                 <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>Gestion des actualités </a>
                                 </li>
                                 <li><a href="/ajouterFichier"><i class="menu-icon icon-paste"></i>Ajouter un fichier </a></li>
-                                <li><a href="task.html"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
+                                <li><a href="/rechercher"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
                                 <li><a href="/listFichier/{{Auth::user()->id}}"><i class="menu-icon icon-tasks"></i>Liste de mes fichiers</a></li>
                             </ul>
 
@@ -80,7 +80,7 @@
                         <div class="content">
                             <div class="btn-controls">
                                 <div class="btn-box-row row-fluid">
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>@if(isset(Auth::user()->email))<strong>Welcome {{ Auth::user()->email }}</strong>
+                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>@if(isset(Auth::user()->email))<strong>Welcome </br>{{ Auth::user()->name }}</strong>
                                     @else
                                     <script>window.location = "/main";</script>
                                     @endif</b>

@@ -64,23 +64,30 @@ Route::get('/main/create', 'MainController@create');
 Route::post('/user/checklogin', 'UserController@checklogin')->name('user_checklogin');
 Route::get('/user/successlogin', 'UserController@successlogin');
 
-/*
-Route::get('main/successlogin', 'MainController@successlogin');
+
+/*Route::get('main/successlogin', 'MainController@successlogin');
 Route::get('main/create', 'MainController@create');
 Route::get('/edit', 'MainController@edit');
 Route::get('main/logout', 'MainController@logout');
-Route::post('/user/checklogin', 'UserController@checklogin');
-Route::get('user/successlogin', 'UserController@successlogin');
+Route::get('/main/listAllFiles', 'FileController@listAllFiles');
 */
 Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
+
 Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');
 Route::get('/listAllFiles/{file}/downloadFile', 'FileController@download')->name('listAllFiles.downloadFile');
 
-//user
 
+//user
+/*
+Route::post('/user/checklogin', 'UserController@checklogin');
+Route::get('user/successlogin', 'UserController@successlogin');
+*/
 Route::get('/ajouterFichier', 'FileController@ajouterFichierPage');
 Route::post('/ajouterFichier', 'FileController@saveFile')->name('saveFile');
 Route::get('/listFichier/{id}', 'FileController@listFichier');
+Route::get('/rechercher', 'FileController@rechercher');
 
 
+Route::post('/engine' ,'FileController@ajaxRecherche')->name('engine');
 
+Route::get('/file/{id}', "FileController@download");
