@@ -84,7 +84,10 @@ Route::get('user/successlogin', 'UserController@successlogin');
 */
 Route::get('/ajouterFichier', 'FileController@ajouterFichierPage');
 Route::post('/ajouterFichier', 'FileController@saveFile')->name('saveFile');
+Route::get("/accueilUser", 'DocumentController@indexToUser');
 Route::get('/listFichier/{id}', 'FileController@listFichier');
+Route::get('/files/{file}/download', "FileController@download")->name('files.download');
+Route::delete('destroyFile/{id}', 'FileController@destroyFile')->name('files.deleteFile');
 
 Route::get('/listAllFiles', 'FileController@listAllFiles')->name('listAllFiles');
 Route::delete('/listAllFiles/{file}/destroy', 'FileController@destroy')->name('listAllFiles.destroy');

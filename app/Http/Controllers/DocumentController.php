@@ -24,6 +24,12 @@ class DocumentController extends Controller
         return view('Admin.documents.index', compact('documents'));
     }
 
+    function indexToUser()
+    {
+        $documents = Document::all();
+        return view('User.successlogin', compact('documents'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -93,12 +99,12 @@ class DocumentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
             $request->validate([
                 'title'  => 'required',
-                'description'    =>  'required'                              
+                'description'    =>  'required'
             ]);
-        
+
 
         $form_data = array(
             'title'  => $request->title,
@@ -120,20 +126,20 @@ class DocumentController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $document = Document::findOrFail($id);
-        
+
         Storage::delete('admin_documents/' . $document->name);
         $document->delete();
-        
+
         return redirect()->route('documents.index')->with('danger', 'le document est supprimé !!');
     }
 
     public function download($id)
     {
-        
+
         $document = Document::findOrFail($id);
-        
+
         //Storage::delete(public_path('admin_documents' ));
         return Storage::download('admin_documents/'. $document->name);
 
@@ -144,7 +150,7 @@ class DocumentController extends Controller
         $document = Document::where('code', $code);
 
         $file = $document->first()->name;
- 
+
 		$myFile = storage_path("app\public\admin_documents\\".$file);
 
         return response()->download($myFile, $file);
@@ -163,9 +169,9 @@ class DocumentController extends Controller
             $rech = $request->get('rech');
             $page = $request->get('page');
 
-            
+
             if($search!="" && $rech!=""){
-                
+
                 $thead="<table class='table'>".
                     "<thead class='thead-dark'>".
                      "<tr>".
@@ -178,10 +184,10 @@ class DocumentController extends Controller
                      "</tr>".
                    "</thead>";
 
-                
+
                 $str = urlencode($search);
                 $query = "$rech:*$str*";
-                
+
                 $start = $page*5-5;
                 $rows = 5;
                 $sort = urlencode("date_up desc");
@@ -190,8 +196,8 @@ class DocumentController extends Controller
                 $file = file_get_contents($url."&start=".$start."&rows=".$rows);
                 eval("\$result = " . $file . ";");
                 $numOfPages = ceil($result["response"]["numFound"]/5);
-                
-                
+
+
 
                 if($result["response"]["numFound"]==0){
                     $rien="<div id='div1'><p class='cntr'><i class='far fa-frown'></i> Aucun résultat trouvé</p></div1>";
@@ -289,9 +295,9 @@ class DocumentController extends Controller
                         $tbody = $tbody."<td>".$date_array[$i]."</td>";
                         $id = $id_array[$i];
                         $tbody = $tbody."<td  class='down'><a href='/file/$id'><i class='icon-cloud-download'></i></a></td></tr>";
-                    } 
+                    }
                 }
-                
+
                 $tbody = $tbody."</tbody></table>";
                 $res=$thead.$tbody;
                 $pagin = "<br><div class='basd'><p class='cntr'>";
@@ -305,7 +311,7 @@ class DocumentController extends Controller
 
                 $res .= $pagin."</p></div>";
 
-                
+
                 return response()->json(["message"=>$res]);
             }
 

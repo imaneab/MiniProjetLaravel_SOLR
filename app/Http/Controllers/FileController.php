@@ -7,6 +7,7 @@ use App\File;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -31,7 +32,7 @@ class FileController extends Controller
                 //stored in storage/app/public/upload :
                 $path_file = $request->file->storeAs('upload', $fileName);
                 //returns path => f db soit kanqyd lfile diali b lpath ou bien b name
-                
+
                 $fullp = str_replace('\\','/',str_replace('public','storage/app/public/', $_SERVER['DOCUMENT_ROOT']));
 
                 $fpath = $fullp.$path_file;
@@ -97,10 +98,10 @@ class FileController extends Controller
                      "</tr>".
                    "</thead>";
 
-                
+
                 $str = urlencode($search);
                 $query = "$rech:*$str*";
-                
+
                 $start = $page*5-5;
                 $rows = 5;
                 $sort = urlencode("date_up desc");
@@ -109,8 +110,8 @@ class FileController extends Controller
                 $file = file_get_contents($url."&start=".$start."&rows=".$rows);
                 eval("\$result = " . $file . ";");
                 $numOfPages = ceil($result["response"]["numFound"]/5);
-                
-                
+
+
 
                 if($result["response"]["numFound"]==0){
                     $rien="<div id='div1'><p class='cntr'><i class='far fa-frown'></i> Aucun résultat trouvé</p></div1>";
@@ -208,9 +209,9 @@ class FileController extends Controller
                         $tbody = $tbody."<td>".$date_array[$i]."</td>";
                         $id = $id_array[$i];
                         $tbody = $tbody."<td  class='down'><a href='/file/$id'><i class='icon-cloud-download'></i></a></td></tr>";
-                    } 
+                    }
                 }
-                
+
                 $tbody = $tbody."</tbody></table>";
                 $res=$thead.$tbody;
                 $pagin = "<br><div class='bas'><p class='cntr'>";
@@ -227,11 +228,19 @@ class FileController extends Controller
                 return response()->json(["message"=>$res]);
             }
 
-            
+
         }
     }
 
-   
+   /* public function download($id)
+    {
+        $document = File::findOrFail($id);
+
+        return Storage::download($document->path_file);
+
+    }*/
+
+
     public function download($id)
     {
         $document = File::findOrFail($id);
@@ -243,11 +252,31 @@ class FileController extends Controller
         //Storage::delete(public_path('admin_documents' ));
         //$filename = str_replace('C:/wamp64/www/MiniProjetLaravel_SOLR/storage','',$path);
         //$file="ASPMVC-Partie1.pdf";
- 
+
 		$myFile = storage_path("app\public\upload\\".$file);
         //$headers = ['Content-Type: application/pdf'];
 
         return response()->download($myFile, $file);
         //return response()->download(storage_path("app/public/{$filename}"));
+    }
+
+    public function destroy($id)    //id de file
+    {
+        $document = File::findOrFail($id);
+
+        Storage::delete($document->path_file);
+        $document->delete();
+
+        return redirect()->route('listAllFiles')->with('danger', 'le document est supprimé !!');
+    }
+
+    public function destroyFile($id)    //id de file
+    {
+        $document = File::findOrFail($id);
+        $user_id = $document->user_id;
+
+        Storage::delete($document->path_file);
+        $document->delete();
+        return back()->with('danger', 'le document est supprimé !!');
     }
 }
