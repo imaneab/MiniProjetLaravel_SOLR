@@ -45,7 +45,7 @@
 
             <div class="module">
                 <div class="module-head">
-                    <h3>La table des documents uploadés par l'admin</h3>
+                    <h3>Documents partagés par l'administration</h3>
                 </div>
 
                 {{-- affichage des Messages --}}
