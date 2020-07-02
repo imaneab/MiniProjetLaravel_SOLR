@@ -61,8 +61,6 @@
                         <ul class="widget widget-menu unstyled">
                                 <li class="active"><a href="/accueilUser"><i class="menu-icon icon-dashboard"></i>Acceuil
                                 </a></li>
-                                <li><a href="activity.html"><i class="menu-icon icon-bullhorn"></i>Gestion des actualités </a>
-                                </li>
                                 <li><a href="/ajouterFichier"><i class="menu-icon icon-paste"></i>Ajouter un fichier </a></li>
                                 <li><a href="/rechercher"><i class="menu-icon icon-search"></i>Moteur de recherche</a></li>
                                 <li><a href="/listFichier/{{Auth::user()->id}}"><i class="menu-icon icon-tasks"></i>Liste de mes fichiers</a></li>
