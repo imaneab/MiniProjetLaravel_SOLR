@@ -28,7 +28,7 @@ class UserController extends Controller
 
         if(Auth::attempt($user_data)){  //enters block if user exists in db
             if(!Auth::user()->is_admin){     //if not admin
-                return redirect('user/successlogin');
+                return redirect('/accueilUser');
             }
             else{
                 return back()->with('error', 'You are an admin, not a normal user');

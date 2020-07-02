@@ -25,7 +25,10 @@
 			</div>
    <!--if user n'est pas admin et deja authentifé => directement dirigé à successlogin-->
    @if(isset(Auth::user()->email) && !Auth::user()->is_admin)
-    <script>window.location="/user/successlogin";</script>
+    <script>//window.location="/user/successlogin";
+    window.location.replace("/accueilUser");
+
+    </script>
    @endif
 
    @if ($message = Session::get('error'))
