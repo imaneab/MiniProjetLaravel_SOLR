@@ -7,7 +7,6 @@
 
 ## Etapes pour démarer Apache Solr
 
-Après le clone du Solr (https://github.com/Mohamed-Z/Search_Engine_Solr.git) :
 
 - Naviguez jusqu'au dossier bin dans le répertoire d'accueil de Solr 
     
